@@ -1,9 +1,11 @@
+import math
+
 # 소수 체크
 def checkSosu(num :int)->bool:
     if num < 2:
         return False
 
-    maxCh = num//2 + 1
+    maxCh = int(math.sqrt(num)) + 1 # root를 이용하면 조금 더 빠른 알고리즘이 된다
 
     for n in range(2,maxCh):
         if num % n == 0:
