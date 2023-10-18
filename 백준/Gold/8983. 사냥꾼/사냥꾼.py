@@ -1,7 +1,5 @@
 import sys 
 
-sys.setrecursionlimit(10**8)
-
 # 사냥꾼
 # 사대의 위치(x) 들에서 총의 사정거리 만큼(사각형임 원 아님)
 # 범위 내의 동물(a,b)을 잡을 수 있다고 한다
