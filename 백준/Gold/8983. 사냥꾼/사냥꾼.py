@@ -16,34 +16,26 @@ sys.setrecursionlimit(10**8)
 # 동물 위치(x)에서 가장 가까운 포대를 정하고
 # 해당 포대에서 잡을수 있는지 확인하면 됨
 
-# 동물 위치에서 잡혀??
-def isCaughtAnimal(animalX : int,animalY : int,ShootPlaceX : int,range : int)->bool:
-    return abs(ShootPlaceX - animalX) + animalY <= range
-
-def DistanceToAniFromSh(animalX : int,animalY : int,ShootPlaceX : int)->int:
-    return abs(ShootPlaceX - animalX) + animalY
-
 def checkShootPlace(start,end,animalX,animalY,shootPlaceArr,range,count):
     if start > end:
         return
     
     mid = (start + end) // 2
 
-    if isCaughtAnimal(animalX,animalY,shootPlaceArr[mid],range):
-        count[0] += 1
+    if shootPlaceArr[mid] < animalX + animalY - range:
+        checkShootPlace(mid+1,end,animalX,animalY,shootPlaceArr,range,count)
+    elif shootPlaceArr[mid] > animalX - animalY + range:
+        checkShootPlace(start,mid-1,animalX,animalY,shootPlaceArr,range,count)
+    else:
+        count[0] +=1
         return
-    
-    if(0 < mid < len(shootPlaceArr) - 1):    
-        disOne = DistanceToAniFromSh(animalX,animalY,shootPlaceArr[mid + 1])
-        disTwo = DistanceToAniFromSh(animalX,animalY,shootPlaceArr[mid - 1])
-        if disOne > disTwo:
-            checkShootPlace(start,mid-1,animalX,animalY,shootPlaceArr,range,count)
-        else:
-            checkShootPlace(mid+1,end,animalX,animalY,shootPlaceArr,range,count)
 
 def shootCount(gunXArea,animalPos,gunRange)->int:
     sum = [0]
     for i in range(len(animalPos)):
+        if animalPos[i][1] > gunRange:
+            continue
+
         checkShootPlace(0,len(gunXArea)-1,animalPos[i][0],animalPos[i][1],gunXArea,gunRange,sum)
 
     return sum[0]
@@ -60,4 +52,3 @@ if __name__ == "__main__":
     animalPos = [list(map(int,sys.stdin.readline().split())) for _ in range(animalCount)]
 
     print(shootCount(gunXArea,animalPos,gunRange))
-
