@@ -1,8 +1,6 @@
 import sys
 input = sys.stdin.readline
 
-sys.setrecursionlimit(10**8)
-
 # DFS
 # 다만 아까처럼 Color 를 이용 (이분 그래프)
 # 시작과 도착점 모두 '실내' 여야 함
