@@ -31,13 +31,10 @@ def bfs():
     for i in range(row):
         for j in range(column):
             if Graph[i][j] == '*':
-                objque.append(['w',i,j])
-
-    for i in range(row):
-        for j in range(column):
-            if Graph[i][j] == 'S':
+                objque.appendleft(['w',i,j])
+            elif Graph[i][j] == 'S':
                 objque.append(['h',i,j])
-    
+
     dx = [-1,1,0,0]
     dy = [0,0,-1,1]
 
@@ -54,13 +51,16 @@ def bfs():
                         Graph[nx][ny] = '*'
                 else: # 고슴도치인 경우
                     if Graph[nx][ny] == 'D':
-                        print(hegiVisit[px][py] + 1)
-                        return 
-                    
+                        return hegiVisit[px][py] + 1
                     if Graph[nx][ny] == '.' and hegiVisit[nx][ny] == 0:
                         hegiVisit[nx][ny] = hegiVisit[px][py] + 1
                         objque.append(['h',nx,ny])
 
-    print('KAKTUS')
+    return -1
 
-bfs()
+result = bfs()
+
+if result == -1:
+    print('KAKTUS')
+else:
+    print(result)
