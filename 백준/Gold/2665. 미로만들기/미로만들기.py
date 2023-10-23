@@ -21,10 +21,8 @@ for i in range(nNum):
 def bfs(graph):
     minheap = []
     heapq.heappush(minheap,[0,0,0]) # cost, pos x , pos y
-    visit = [[False] * nNum for _ in range(nNum)]
-    visit[0][0] = True
 
-    #closePos = set()
+    closePos = set()
 
     while minheap:
         cost, posX, posY = heapq.heappop(minheap)
@@ -33,15 +31,12 @@ def bfs(graph):
             print(cost)
             return
 
-        #closePos.add((posX,posY))
-        #visit[posX][posY] = True
-
         for dx,dy in [(1,0),(-1,0),(0,1),(0,-1)]:
             newX = posX + dx
             newY = posY + dy
 
-            if 0 <= newX < nNum and 0 <= newY < nNum and visit[newX][newY] == False:
-                visit[newX][newY] = True
+            if 0 <= newX < nNum and 0 <= newY < nNum and (newX,newY) not in closePos:
+                closePos.add((newX,newY))
                 if graph[newX][newY] == 0:
                     newCost = 1
                 else:
