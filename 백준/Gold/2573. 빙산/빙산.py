@@ -1,60 +1,54 @@
-from collections import deque
 import sys
-input = sys.stdin.readline
+from collections import deque
+sys.setrecursionlimit(10**8)
 
-dy = [-1,1,0,0]
-dx = [0,0,-1,1]
+inp = sys.stdin.readline
 
-def bfs(startY,startX,visit):
-    queue = deque()
-    queue.append([startY,startX])
-    visit[startY][startX] = True
+boardX, boardY = map(int, inp().split())
+board = [list(map(int, inp().split())) for _ in range(boardX)]
 
-    while queue:
-        y,x = queue.popleft()
-        for i in range(4):
-            ny = y + dy[i]
-            nx = x + dx[i]
+dx = [-1, 1, 0, 0]
+dy = [0, 0, -1, 1]
 
-            if (0<=ny<n) and (0<=nx<m):
-                if graph[ny][nx] == 0:
-                    visit[y][x] += 1
+# DFS로 빙하 녹이는 함수
+def meltIceberg(startX, startY, visit):
+    nearZeroCount = 0
 
-                if visit[ny][nx] == False and graph[ny][nx] != 0:
-                    queue.append([ny,nx])
-                    visit[ny][nx] = True
+    for i in range(4):
+        nx, ny = startX + dx[i], startY + dy[i]
+        if 0 <= nx < boardX and 0 <= ny < boardY and not visit[nx][ny]:
+            if board[nx][ny] == 0:
+                nearZeroCount += 1
+            else:
+                visit[nx][ny] = True
+                meltIceberg(nx, ny, visit)
 
+    board[startX][startY] = max(0, board[startX][startY] - nearZeroCount)
 
-n , m = map(int,input().split())
-graph = [list(map(int,input().split())) for _ in range(n)]
+# '빙하 덩어리' 확인 함수
+def checkIceberg():
+    visit = [[False] * boardY for _ in range(boardX)]
+    count = 0
 
+    for i in range(boardX):
+        for j in range(boardY):
+            if board[i][j] != 0 and not visit[i][j]:
+                count += 1
+                visit[i][j] = True
+                meltIceberg(i, j, visit)
 
-#두 덩어리 이상으로 분리되는 최초의 시간(년)을 구하는 프로그램
+    return count
+
 time = 0
 while True:
-    count = 0
-    visited = [[0] * m for _ in range(n)]
+    remaining_icebergs = checkIceberg()
 
-    # bfs 돌며 근처에 0 확인 및
-    # 얼음이 두 덩어리인지 확인
-    for i in range(n):
-        for j in range(m):
-            # 0이 아니고, 방문 안했다
-            if not visited[i][j] and graph[i][j] !=0:
-                bfs(i,j,visited) #bfs로 탐색하기
-                count +=1
-
-    # 그래프에서 얼음 녹은만큼 빼주기
-    for i in range(n):
-        for j in range(m):
-            if visited[i][j]:
-                graph[i][j] = max(graph[i][j] - visited[i][j] + 1,0)
-
-    time += 1
-    if count == 0:
+    if remaining_icebergs == 0:
         print(0)
-        exit()
-    if count >=2 :
         break
 
-print(time-1)
+    if remaining_icebergs >= 2:
+        print(time)
+        break
+
+    time += 1
