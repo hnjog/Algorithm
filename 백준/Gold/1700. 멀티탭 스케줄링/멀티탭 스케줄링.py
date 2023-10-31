@@ -31,9 +31,8 @@ for i in range(useCount):
         for j in range(i+1,useCount):
             electJ = seq[j]
             if electJ == ele: # 뽑을 녀석이다
-                if j > tempInd:
-                    tempInd = j
-                    break
+                tempInd = j
+                break
         if tempInd == -1:
             key = ele
             break
