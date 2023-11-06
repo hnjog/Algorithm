@@ -1,24 +1,35 @@
 import sys
 import math
 
+sys.setrecursionlimit(10**8)
+
 inp = sys.stdin.readline
 
 n = int(inp().strip())
 
 dp = [0] + [math.inf for _ in range(n)]
 
-dp[0] = 0
 dp[1] = 0
 
-def process(x:int):
-    for i in range(2,x+1):
-        v2 = v3 = math.inf
-        if i % 3 == 0:
-            v3 = dp[i//3]
-        if i% 2 == 0:
-            v2 = dp[i//2]
-        
-        dp[i] = min(v2 + 1,v3 + 1,dp[i-1] + 1)
+def process(x : int)->int:
+    if x <= 1:
+        return 0
+    
+    if dp[x] != math.inf:
+        return dp[x]
+
+    sum = math.inf
+
+    if x % 3 == 0 and x % 2 == 0:
+        sum = min(process(x//3) + 1,process(x//2) + 1)
+    elif x % 3 == 0:
+        sum = min(process(x//3) + 1,process(x - 1) + 1)
+    elif x % 2 == 0:
+        sum = min(process(x - 1) + 1,process(x//2) + 1)
+    else:
+        sum = process(x - 1) + 1
+    
+    dp[x] = min(sum,dp[x])
 
     return dp[x]
 
