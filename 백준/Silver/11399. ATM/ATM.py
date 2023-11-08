@@ -8,11 +8,11 @@ vals = list(map(int,inp().split()))
 
 vals.sort()
 
-times = [0 for _ in range(num)]
+times = 0
 sumTimes = 0
 
 for i in range(num):
-    times[i] = times[i-1] + vals[i]
-    sumTimes += times[i]
+    times += vals[i]
+    sumTimes += times
 
 print(sumTimes)
