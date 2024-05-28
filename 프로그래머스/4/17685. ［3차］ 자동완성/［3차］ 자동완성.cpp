@@ -47,7 +47,7 @@ int solution(vector<string> words) {
 
     for (const auto& word : words)
     {
-        answer += min(static_cast<int>(word.size()), start.findCount(word, 0));
+        answer += start.findCount(word, 0);
     }
 
     return answer;
