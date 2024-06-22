@@ -1,5 +1,6 @@
 #include <string>
 #include <vector>
+#include<math.h>
 
 using namespace std;
 
@@ -38,19 +39,12 @@ string func(string s)
     // 1. 110을 전부 제거하기
     int deleteCount = 0;
     string temp = s;
-    for (int i = 0; i < temp.size() - 2; i++)
+    int pos = 0;
+    while ((pos = temp.find("110", pos)) != string::npos)
     {
-        if (temp.size() <= 2)
-            break;
-
-        if (find110(temp, i))
-        {
-            temp.erase(i, 3); // 110 제거
-            deleteCount++;
-            i -= 3;
-            if (i < 0)
-                i = -1;
-        }
+        temp.erase(pos, 3);
+        deleteCount++;
+        pos = max(pos - 3,0);
     }
 
     // 2. 삽입을 할 위치 찾기
@@ -58,7 +52,9 @@ string func(string s)
     for (int i = 0; i < temp.size(); i++)
     {
         if (temp[i] == '0')
+        {
             lastZeroPos = i + 1;
+        }
     }
 
     string temp2 = temp.substr(0, lastZeroPos);
