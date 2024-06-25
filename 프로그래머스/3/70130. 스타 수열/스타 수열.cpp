@@ -11,11 +11,10 @@ int solution(vector<int> a) {
     for (int i = 0; i < a.size(); i++)
     {
         int value = a[i];
-        int count = 0;
-        int startI = i;
 
         if (i < a.size() - 1 && value == a[i + 1])
         {
+            int count = 0;
             for (int j = i + 1; j < a.size(); j++)
             {
                 if (value == a[j])
@@ -32,15 +31,7 @@ int solution(vector<int> a) {
                 i += count;
         }
 
-        if (startI != 0 && i != a.size() - 1 && count > 1)
-        {
-            nc[value] = nc[value] + 2;
-        }
-        else
-        {
-            nc[value] = nc[value] + 1;
-        }
-        
+        nc[value] = nc[value] + 1;
     }
 
     // nc에서 가장 개수 많은 수를 기준으로 벡터를 돌며 찾기
