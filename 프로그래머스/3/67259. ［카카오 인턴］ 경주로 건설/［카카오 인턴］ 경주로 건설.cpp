@@ -13,6 +13,10 @@ enum dir
 };
 
 int solution(vector<vector<int>> board) {
+	// bfs 처럼 보임
+	// 그러나 장애물 존재
+	// + 전진이 아닌 경우 추가 비용
+
 	const int n = board.size() - 1;
 	int answer = 0;
 	struct wayInfo
@@ -21,6 +25,7 @@ int solution(vector<vector<int>> board) {
 		int x = 0;
 
 		dir d = down;
+		int cost = 100;
 
 		int f = 1;
 		int c = 0;
@@ -28,16 +33,15 @@ int solution(vector<vector<int>> board) {
 
 	queue<wayInfo> q;
 	q.push(wayInfo());
-	q.push({ 0,0,right });
+	q.push({ 0,0,right,100 });
 
-	vector<vector<pair<int, int>>> dp1(n + 1, vector<pair<int, int>>(n + 1, { INT_MAX / 10 ,INT_MAX / 10 })); // up, down 상황일때 비교
-	vector<vector<pair<int, int>>> dp2(dp1);   // left, right 상황일때 비교
+	vector<vector<int>> dp1(n + 1, vector<int>(n + 1, INT_MAX)); // up, down 상황일때 비교
+	vector<vector<int>> dp2(dp1);   // left, right 상황일때 비교
 
 	while (q.empty() == false)
 	{
 		wayInfo now = q.front();
 		q.pop();
-		int size = q.size();
 
 		if (now.x < 0 || now.x > n ||
 			now.y < 0 || now.y > n)
@@ -48,26 +52,33 @@ int solution(vector<vector<int>> board) {
 
 		if (now.d == up || now.d == down)
 		{
-			int cost = now.f + now.c * 5;
-			int dCost = dp1[now.y][now.x].first + dp1[now.y][now.x].second * 5;
-			if (cost >= dCost)
+			if (now.cost >= dp1[now.y][now.x])
 				continue;
 
-			dp1[now.y][now.x] = {now.f,now.c};
+			dp1[now.y][now.x] = now.cost;
 		}
 		else
 		{
-			int cost = now.f + now.c * 5;
-			int dCost = dp2[now.y][now.x].first + dp2[now.y][now.x].second * 5;
-			if (cost >= dCost)
+			if (now.cost >= dp2[now.y][now.x])
 				continue;
 
-			dp2[now.y][now.x] = { now.f,now.c };
+			dp2[now.y][now.x] = now.cost;
 		}
 
 		if (now.x == n &&
 			now.y == n)
 		{
+			int finalCost = (now.f - 1) * 100 + now.c * 500;
+
+			if (now.d == up || now.d == down)
+			{
+				dp1[now.y][now.x] = finalCost;
+			}
+			else
+			{
+				dp2[now.y][now.x] = finalCost;
+			}
+
 			continue;
 		}
 
@@ -115,15 +126,19 @@ int solution(vector<vector<int>> board) {
 				break;
 			}
 
-			q.push(wayInfo{ nextY,nextX,static_cast<dir>(nextDir),nextF,nextC });
+
+			int nextCost = now.cost + 100;
+			if (i != 0)
+			{
+				nextCost += 400;
+			}
+
+			q.push(wayInfo{ nextY,nextX,static_cast<dir>(nextDir),nextCost,nextF,nextC });
 		}
 
 	}
 
-
-
-	answer = min(dp1[n][n].first + dp1[n][n].second * 5 - 1, dp2[n][n].first + dp2[n][n].second * 5 - 1);
-	answer *= 100;
+	answer = min(dp1[n][n], dp2[n][n]);
 
 	return answer;
 }
