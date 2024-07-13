@@ -39,7 +39,7 @@ vector<int> solution(vector<int> fees, vector<string> records) {
 			}
 			else if (key == "")
 			{
-				key = p_s;
+				key = string(p_s);
 			}
 			else if (isIn == false)
 			{
