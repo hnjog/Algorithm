@@ -13,7 +13,7 @@ struct Node{
 
 string solution(int n, int k, vector<string> cmd) {
     string answer = "";
-    struct Node node[n];
+    vector<Node> node(n);
     stack<Node> deleted;
     
     for(int i = 0; i < n; i++){
