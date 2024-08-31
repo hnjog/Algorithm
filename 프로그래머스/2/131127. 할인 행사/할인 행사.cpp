@@ -4,45 +4,50 @@
 
 using namespace std;
 
+bool isSameMap(unordered_map<string, int>& wMap, unordered_map<string, int>& tMap, const vector<string>& want)
+{
+	int wSize = want.size();
+
+	for (int i = 0; i < wSize; i++)
+	{
+		if (tMap[want[i]] != wMap[want[i]])
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
 int solution(vector<string> want, vector<int> number, vector<string> discount) {
-    int answer = 0;
-    int wSize = want.size();
+	int answer = 0;
+	int wSize = want.size();
 
-    unordered_map<string, int> wantMap;
-    for (int i = 0; i < wSize; i++)
-    {
-        wantMap[want[i]] = number[i];
-    }
+	unordered_map<string, int> wantMap;
+	for (int i = 0; i < wSize; i++)
+	{
+		wantMap[want[i]] = number[i];
+	}
 
-    int dSize = discount.size();
+	int dSize = discount.size();
+	unordered_map<string, int> tempMap;
 
-    for (int i = 0; i <= dSize - 10; i++)
-    {
-        unordered_map<string, int> tempMap;
-        for (int j = i; j < i + 10; j++)
-        {
-            tempMap[discount[j]]++;
-        }
+	for (int i = 0; i < 10; i++)
+	{
+		tempMap[discount[i]]++;
+	}
 
-        if (tempMap.size() != wantMap.size())
-            continue;
+	if (isSameMap(tempMap, wantMap, want))
+		answer++;
 
-        bool isSame = true;
-        // 두 Map이 같은 요소를 지니는 지 확인하기
-        for (int k = 0; k < wSize; k++)
-        {
-            if (tempMap[want[k]] != wantMap[want[k]])
-            {
-                isSame = false;
-                break;
-            }
-        }
+	for (int i = 10; i < dSize; i++)
+	{
+		tempMap[discount[i]]++;
+		tempMap[discount[i - 10]]--;
 
-        if (isSame)
-        {
-            answer++;
-        }
-    }
+		if (isSameMap(tempMap, wantMap, want))
+			answer++;
+	}
 
-    return answer;
+	return answer;
 }
