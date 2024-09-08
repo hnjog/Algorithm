@@ -7,21 +7,17 @@ int solution(vector<int> elements) {
     int eSize = elements.size();
     unordered_set<int> vs;
     
-    for (int i = 1; i <= eSize; i++) // 길이
+    for (int i = 0; i < eSize; i++) // 길이
     {
-        for (int j = 0; j < eSize; j++) // 시작 지점
+        int sum = 0;
+        for (int j = i; j < i + eSize; j++) // 시작 지점
         {
-            int sum = 0;
             // 실제 계산 용
-            for (int k = j; k < j + i; k++)
-            {
-                int idx = k;
-                if (idx >= eSize)
-                    idx -= eSize;
+            // 반복문을 추가로 돌지 않더라도
+            // 해당 시작 지점에서 크기만큼 더해주는 방식으로 더 빠르게 풀 수 있음
+            int idx = j % eSize;
 
-                sum += elements[idx];
-            }
-
+            sum += elements[idx];
             vs.insert(sum);
         }
     }
