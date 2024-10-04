@@ -6,7 +6,6 @@ using namespace std;
 int check(vector<string>& board)
 {
 	int result = 0;
-
 	int bSize1 = board.size();
 	int bSize2 = board[0].size();
 
@@ -53,7 +52,6 @@ int check(vector<string>& board)
 
 void sortingFunc(vector<string>& board)
 {
-	// 'x' 되어 있는 녀석들을 그 위에 2칸들과 바꿔줄 예정
 	int bSize1 = board.size();
 	int bSize2 = board[0].size();
 
