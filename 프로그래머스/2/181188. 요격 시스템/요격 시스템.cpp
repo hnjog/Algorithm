@@ -1,6 +1,5 @@
 #include <vector>
 #include<algorithm>
-#include<queue>
 
 using namespace std;
 
@@ -16,41 +15,24 @@ bool isOverlap(vector<int>& a, vector<int>& b)
 int solution(vector<vector<int>> targets) {
 	int answer = 1;
 
-	sort(targets.begin(), targets.end(), [](const vector<int>& a, const vector<int>& b) {
-		if (a[0] == b[0])
-			return a[1] < b[1];
-
-		return a[0] < b[0];
-		});
+	sort(targets.begin(), targets.end());
 
 	int tSize = targets.size();
 
-	queue<vector<int>>q;
-
-	for (auto a : targets)
+	for (int i = 0; i < tSize - 1; i++)
 	{
-		q.push(a);
-	}
+		bool beforeOverlap = isOverlap(targets[i],targets[i+1]);
 
-	while (q.size() > 1)
-	{
-		vector<int> l1 = q.front();
-		q.pop();
-		vector<int>& l2 = q.front();
-
-		bool overlap = isOverlap(l1,l2);
-
-		if (overlap)
+		if (beforeOverlap)
 		{
-			l2[0] = max(l1[0], l2[0]);
-			l2[1] = min(l1[1], l2[1]);
+			targets[i + 1][0] = max(targets[i + 1][0], targets[i][0]);
+			targets[i + 1][1] = min(targets[i + 1][1], targets[i][1]);
 		}
 		else
 		{
 			answer++;
 		}
-
 	}
-	
+
 	return answer;
 }
