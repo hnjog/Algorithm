@@ -17,7 +17,7 @@ bool hasAllElements(const set<int>& setA, const set<int>& setB)
     return true;
 }
 
-void dfs(set<int>& uSet,int startIdx,int nowIdx, map<int, map<string, set<int>>>& overlapV, set<set<int>>& candiKeys,int count,const vector<vector<string>>& relation)
+void dfs(set<int>& uSet,int nowIdx, set<set<int>>& candiKeys,int count,const vector<vector<string>>& relation)
 {
     int rSize = relation.size();
     int vSize = relation[0].size();
@@ -73,7 +73,7 @@ void dfs(set<int>& uSet,int startIdx,int nowIdx, map<int, map<string, set<int>>>
 
     for (int i = nowIdx + 1; i < vSize; i++)
     {
-        dfs(uSet, startIdx, i, overlapV, candiKeys, count, relation);
+        dfs(uSet, i, candiKeys, count, relation);
     }
 
     uSet.erase(nowIdx);
@@ -85,45 +85,13 @@ int solution(vector<vector<string>> relation) {
 
     set<set<int>> candiKeys;
 
-    map<int, map<string,set<int>>> overlapV;
-    
-    for (int i = 0; i < vSize; i++)
-    {
-        map<string,int> checkMap;
-        bool isOnly = true;
-        for (int j = 0; j < rSize; j++)
-        {
-            if (checkMap.find(relation[j][i]) != checkMap.end())
-            {
-                isOnly = false;
-                
-                if (overlapV.find(i) == overlapV.end())
-                {
-                    overlapV[i] = map<string, set<int>>();
-                    overlapV[i][relation[j][i]] = set<int>();
-                }
-
-                overlapV[i][relation[j][i]].insert(j);
-                overlapV[i][relation[j][i]].insert(checkMap[relation[j][i]]);
-            }
-            checkMap.insert({ relation[j][i] ,j});
-        }
-
-        if (isOnly)
-        {
-            set<int> uSet;
-            uSet.insert(i);
-            candiKeys.insert(uSet);
-        }
-    }
-
-    int count = 2;
+    int count = 1;
     while (count <= vSize)
     {
         for (int i = 0; i < vSize; i++)
         {
             set<int> uSet;
-            dfs(uSet, i, i, overlapV, candiKeys, count,relation);
+            dfs(uSet,  i, candiKeys, count,relation);
         }
 
         count++;
