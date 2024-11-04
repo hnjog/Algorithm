@@ -3,24 +3,29 @@
 
 using namespace std;
 
-void check(const string& dartResult, int nowIndex,int& answer,int& now, int& prev)
+bool check(const string& dartResult, int nowIndex,int& answer,int& now, int& prev)
 {
     if (nowIndex + 1 >= dartResult.size())
-        return;
-
+        return false;
+    
+    if(dartResult[nowIndex + 1] != '*' &&
+      dartResult[nowIndex + 1] != '#')
+        return false;
+    
+    answer -= now;
+    
     if (dartResult[nowIndex + 1] == '*')
     {
-        answer -= now;
         now *= 2;
         answer += now;
         answer += prev;
+        return true;
     }
-    else if(dartResult[nowIndex + 1] == '#')
-    {
-        answer -= now;
-        now *= -1;
-        answer += now;
-    }
+    
+    now *= -1;
+    answer += now;
+    
+    return true;
 }
 
 int solution(string dartResult) {
@@ -49,24 +54,18 @@ int solution(string dartResult) {
             continue;
         }
 
-        if (c == 'S')
+        if (c == 'S' ||
+            c == 'D' ||
+            c == 'T')
         {
-            answer += now;
-            check(dartResult, i, answer,now,prev);
-        }
+            if (c == 'D')
+                now = pow(now, 2);
+            else if (c == 'T')
+                now = pow(now, 3);
 
-        if (c == 'D')
-        {
-            now = pow(now, 2);
             answer += now;
-            check(dartResult, i, answer, now, prev);
-        }
-
-        if (c == 'T')
-        {
-            now = pow(now, 3);
-            answer += now;
-            check(dartResult, i, answer, now, prev);
+            if (check(dartResult, i, answer, now, prev))
+                i++;
         }
     }
 
