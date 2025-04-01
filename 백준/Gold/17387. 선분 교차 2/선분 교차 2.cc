@@ -6,15 +6,6 @@ struct Point {
     long long x, y;
 };
 
-bool isSamePoint(Point& p1, Point& p2)
-{
-    if (p1.x == p2.x &&
-        p1.y == p2.y)
-        return true;
-
-    return false;
-}
-
 int orientation(Point p, Point q, Point r)
 {
     long long val1 = (q.y - p.y) * (r.x - q.x);
@@ -25,6 +16,7 @@ int orientation(Point p, Point q, Point r)
     return (val1 > val2) ? 1 : 2;
 }
 
+// 하나의 선분이 다른 선분 위에 있는지를 체크
 bool onSegment(Point p, Point q, Point r) {
     return (q.x <= max(p.x, r.x) && q.x >= min(p.x, r.x) &&
         q.y <= max(p.y, r.y) && q.y >= min(p.y, r.y));
