@@ -1,7 +1,6 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
-#include<unordered_set>
 #include<limits.h>
 
 using namespace std;
@@ -22,7 +21,7 @@ int ChickDis(const pos& a, const pos& b)
 	return abs(a.y - b.y) + abs(a.x - b.x);
 }
 
-void dfs(const vector<pos>& houses, const vector<pos>& chicks, vector<int>& picked, int start, int m, int& result) 
+void Recur(const vector<pos>& houses, const vector<pos>& chicks, vector<int>& picked, int start, int m, int& result) 
 {
 	if (picked.size() == m) 
 	{
@@ -44,7 +43,7 @@ void dfs(const vector<pos>& houses, const vector<pos>& chicks, vector<int>& pick
 	for (int i = start; i < chicks.size(); i++) 
 	{
 		picked.push_back(i);
-		dfs(houses, chicks, picked, i + 1, m, result);
+		Recur(houses, chicks, picked, i + 1, m, result);
 		picked.pop_back();
 	}
 }
@@ -76,7 +75,7 @@ int main()
 	int result = INT_MAX;
 	vector<int> selected;
 
-	dfs(houses, chicks, selected, 0, m, result);
+	Recur(houses, chicks, selected, 0, m, result);
 
 	cout << result;
 
