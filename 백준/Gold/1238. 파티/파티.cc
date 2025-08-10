@@ -46,8 +46,7 @@ int bfs(unordered_map<int, vector<pii>>& roads, int start, int to)
 
 		if (now == to)
 		{
-			ret = nowCost;
-			continue;
+			return nowCost;
 		}
 
 		for (auto p : roads[now])
