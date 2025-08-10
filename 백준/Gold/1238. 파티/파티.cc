@@ -55,7 +55,7 @@ int bfs(unordered_map<int, vector<pii>>& roads, int start, int to)
 		}
 	}
 
-	return ret;
+	return -1;
 }
 
 int main()
