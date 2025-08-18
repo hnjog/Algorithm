@@ -22,7 +22,5 @@ string solution(vector<int> numbers) {
         answer += to_string(a);
     }
 
-    int b = 10;
-
     return answer;
 }
