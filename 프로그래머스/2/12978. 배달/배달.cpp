@@ -1,111 +1,88 @@
-#include <vector>
+#include<iostream>
+#include<vector>
 #include<unordered_map>
 #include<queue>
+#include<limits.h>
 
 using namespace std;
 
+typedef pair<int, int> pii;
+
+struct info
+{
+	int now;
+	int nowCost;
+};
+
 struct Compare
 {
-	bool operator()(pair<int, int>& a, pair<int, int>& b)
+	bool operator()(const info& a, const info& b)
 	{
-		if (a.second == b.second)
-			return a.first > b.first;
-
-		return a.second > b.second;
+		return a.nowCost < b.nowCost;
 	}
 };
 
-int solution(int N, vector<vector<int> > road, int K) {
-	int answer = 1;
+const int start = 1;
 
-	unordered_map<int, unordered_map<int, int>> maps;
+bool isTime(unordered_map<int, vector<pii>>& graphs, vector<int>& dp, int k, int to)
+{
+	if (dp[to] <= k)
+		return true;
 
-	for (const auto& r : road)
+	priority_queue<info, vector<info>, Compare> pq;
+	pq.push({ start,0 });
+
+	while (pq.empty() == false)
 	{
-		int start = r[0];
-		int end = r[1];
-		int cost = r[2];
+		int now = pq.top().now;
+		int nowCost = pq.top().nowCost;
+		pq.pop();
 
-		if (maps.find(start) == maps.end())
-			maps[start] = unordered_map<int, int>();
+		if (nowCost > dp[now])
+			continue;
 
-		// 중복 값이 들어올 수 있음
-		if (maps[start].find(end) != maps[start].end())
-		{
-			if (maps[start][end] > cost)
-				maps[start][end] = cost;
-		}
-		else
-		{
-			maps[start][end] = cost;
-		}
+		dp[now] = nowCost;
 
-		if (maps.find(end) == maps.end())
-			maps[end] = unordered_map<int, int>();
+		if (nowCost > k)
+			continue;
 
-		if (maps[end].find(start) != maps[end].end())
+		if (now == to)
+			return true;
+
+		for (auto& g : graphs[now])
 		{
-			if (maps[end][start] > cost)
-				maps[end][start] = cost;
-		}
-		else
-		{
-			maps[end][start] = cost;
+			pq.push({ g.first,nowCost + g.second });
 		}
 	}
 
+	return false;
+}
 
-	// 각 도시의 값 구하기
-	for (int i = 2; i <= N; i++)
+// 마을 개수, 각 마을 연결 도로, 배달 제한 시간
+int solution(int N, vector<vector<int>> road, int K) 
+{
+	int answer = 0;
+
+	unordered_map<int, vector<pii>> graphs;
+
+	for (auto& r : road)
 	{
-		int start = 1;
-		int target = i;
-		vector<bool> visited(N + 1, false);
-		visited[0] = true;
-		visited[1] = true;
+		int start = r[0];
+		int to = r[1];
+		int cost = r[2];
 
-		// BFS 탐색 (목적지, 비용)
-		priority_queue<pair<int, int>, vector<pair<int, int>>, Compare> pq;
-		for (const auto& a : maps[start])
+		graphs[start].push_back({ to,cost });
+		graphs[to].push_back({ start,cost });
+	}
+
+	vector<int> dp(N + 1, INT_MAX);
+
+	for (int i = 1; i <= N; i++)
+	{
+		if (isTime(graphs, dp, K, i))
 		{
-			pq.push(a);
+			answer++;
 		}
-
-		while (pq.empty() == false)
-		{
-			auto p = pq.top();
-			pq.pop();
-
-			int now = p.first;
-			int nowCost = p.second;
-
-			if (nowCost > K)
-				continue;
-
-			// 목적지 도착
-			if (now == target)
-			{
-				if (nowCost <= K)
-				{
-					answer++;
-					break;
-				}
-
-				continue;
-			}
-
-			// 이미 방문함
-			if (visited[now] == true)
-				continue;
-
-			visited[now] = true;
-
-			for (const auto& a : maps[now])
-			{
-				pq.push({ a.first,a.second + nowCost });
-			}
-		}
-
 	}
 
 	return answer;
