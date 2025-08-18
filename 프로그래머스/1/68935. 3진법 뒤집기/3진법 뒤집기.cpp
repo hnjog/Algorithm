@@ -1,6 +1,5 @@
 #include <string>
 #include <algorithm>
-#include <iostream>
 
 using namespace std;
 
@@ -14,8 +13,6 @@ int solution(int n) {
         n /= 3;
     }
     str += to_string(n);
-    
-    cout << str;
     
     for(int i = 0; i < str.size();i++)
     {
