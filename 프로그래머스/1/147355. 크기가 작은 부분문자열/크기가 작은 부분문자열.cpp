@@ -11,7 +11,7 @@ int solution(string t, string p) {
     for(int i = 0; i <= ts - ps;i++)
     {
         string temp(t.begin() + i, t.begin()+ i + ps);
-        if((temp) <= (p))
+        if(temp <= p)
         {
             answer++;
         }
