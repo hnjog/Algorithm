@@ -1,16 +1,16 @@
 #include <vector>
-#include<set>
-#include<map>
+#include<unordered_set>
+#include<unordered_map>
 
 using namespace std;
 
 vector<int> solution(vector<int> lottos, vector<int> win_nums) {
     vector<int> answer(2,6);
     
-    set<int> lSet;
+    unordered_set<int> lSet;
     int zeroCount = 0;
     
-    map<int,int> rank;
+    unordered_map<int,int> rank;
     rank[6] = 1;
     rank[5] = 2;
     rank[4] = 3;
