@@ -20,11 +20,11 @@ int main()
 
 	// 반복문을 도는 주체가 coin 일것
 	// 각 '수'마다 돌 경우 (0~k) - 코인들의 결과가 섞임
-	for (int i = 0; i < n; i++)
+	for (int c : coins)
 	{
-		for (int j = coins[i]; j <= k; j++)
+		for (int i = c; i <= k; i++)
 		{
-			dp[j] += dp[j - coins[i]];
+			dp[i] += dp[i - c];
 		}
 	}
 
