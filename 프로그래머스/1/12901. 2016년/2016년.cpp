@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 
@@ -13,8 +12,6 @@ string solution(int a, int b) {
         n += months[i];
     n += b;
     n--;
-    cout << n << '\n';
-    cout << n % 7 << '\n';
     answer = days[n % 7 + 1];
     return answer;
 }
