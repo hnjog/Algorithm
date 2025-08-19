@@ -24,17 +24,11 @@ bool isPriority_Num(int _num)
 
 int solution(vector<int> nums) {
 	int answer = 0;
-
-	// for을 3개 사용한다?
 	size_t size = nums.size();
-
 	if (size < 2)
 	{
 		return answer;
 	}
-
-
-	int sum;
 
 	for (size_t i = 0; i < size - 2; i++)
 	{
@@ -42,8 +36,7 @@ int solution(vector<int> nums) {
 		{
 			for (size_t k = j + 1; k < size; k++)
 			{
-				sum = nums[i] + nums[j] + nums[k];
-				if (isPriority_Num(sum) == true)
+				if (isPriority_Num(nums[i] + nums[j] + nums[k]) == true)
 				{
 					answer++;
 				}
