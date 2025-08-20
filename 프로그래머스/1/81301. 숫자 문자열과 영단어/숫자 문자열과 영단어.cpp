@@ -1,53 +1,40 @@
 #include <string>
-#include<unordered_map>
+#include <vector>
+#include <unordered_map>
 
 using namespace std;
 
 int solution(string s) {
-    int answer = 0;
-    string t = "";
-    size_t sSize = s.size();
+    unordered_map<string, char> umap;
+    umap["zero"] = '0';
+    umap["one"] =  '1';
+    umap["two"] = '2';
+    umap["three"] = '3';
+    umap["four"] = '4';
+    umap["five"] = '5';
+    umap["six"] = '6';
+    umap["seven"] = '7';
+    umap["eight"] = '8';
+    umap["nine"] = '9';
 
-    unordered_map<string,string> umap;
-    umap["zero"] = "0";
-    umap["one"] = "1";
-    umap["two"] = "2";
-    umap["three"] = "3";
-    umap["four"] = "4";
-    umap["five"] = "5";
-    umap["six"] = "6";
-    umap["seven"] = "7";
-    umap["eight"] = "8";
-    umap["nine"] = "9";
+    string temp = "";
+    string answers = "";
 
-    for (size_t i = 0; i < sSize; i++)
+    for (char c : s)
     {
-        char c = s[i];
         if (c >= '0' && c <= '9')
         {
-            t += c;
+            answers += c;
+            continue;
         }
-        else
-        {
-            string temp = "";
-            size_t idx = 0;
-            while (i + idx < sSize)
-            {
-                char nextC = s[i + idx];
-                temp += nextC;
-                if (umap.find(temp) != umap.end())
-                {
-                    t += umap[temp];
-                    break;
-                }
-                idx++;
-            }
 
-            i += idx;
+        temp += c;
+        if (umap.find(temp) != umap.end())
+        {
+            answers += umap[temp];
+            temp = "";
         }
     }
 
-    answer = stoi(t);
-
-    return answer;
+    return stoi(answers);
 }
