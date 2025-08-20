@@ -1,41 +1,45 @@
 #include <string>
 #include <vector>
-#include<map>
-#include<set>
+#include <map>
+#include <set>
+#include <sstream>
 
 using namespace std;
 
 vector<int> solution(vector<string> id_list, vector<string> report, int k) {
-    vector<int> answer(id_list.size(),0);
-    map<string, set<string>> umap;
-    map<string, int> idxMap;
+    vector<int> answer(id_list.size());
 
-    int idx = 0;
-    for (string id : id_list)
+    map<string, set<string>> repMap;
+    map<string, int> res;
+
+    for (string& str : id_list)
     {
-        umap[id] = set<string>();
-        idxMap[id] = idx;
-        idx++;
+        res[str] = 0;
     }
 
-    for (string r : report)
+    for (string str : report)
     {
-        int pos = r.find(' ');
-        string f = r.substr(0, pos);  // 신고 한 녀석
-        string s = r.substr(pos + 1); // 신고 받은 녀석
+        int pos = str.find(' ');
+        string a = str.substr(0, pos);
+        string b = str.substr(pos + 1, str.size());
 
-        umap[s].insert(f);
+        repMap[b].insert(a);
     }
 
-    for (const auto& u : umap)
+    for (auto& it : repMap)
     {
-        if (u.second.size() < k)
-            continue;
-
-        for (string reporter : u.second)
+        if (it.second.size() >= k)
         {
-            answer[idxMap[reporter]]++;
+            for (const string& str : it.second)
+            {
+                res[str]++;
+            }
         }
+    }
+
+    for (int i = 0; i < id_list.size(); i++)
+    {
+        answer[i] = res[id_list[i]];
     }
 
     return answer;
