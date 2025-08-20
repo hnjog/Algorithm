@@ -1,86 +1,81 @@
-#include <string>
 #include <vector>
 
 using namespace std;
 
-const int shotCount = 11;
-const int points[shotCount] = { 10,9,8,7,6,5,4,3,2,1,0 };
+const int values[11] = { 10,9,8,7,6,5,4,3,2,1,0 };
+int bestDis = 0;
+vector<int> bestAnswer;
 
-void findRecur(int n,const vector<int>& info, vector<int>& temp, vector<int>& answer, vector<bool>& visit ,int targetSum, int nowSum, int nowCount,int& bestDis)
+void recur(int n, const vector<int>& info, vector<int>& nows, int count, int idx)
 {
-    // 기저 조건(종료)
-    if (nowCount > n)
+    if (count > n || idx >= 11)
         return;
-
-    if (nowCount == n &&
-        nowSum > targetSum &&
-        bestDis <= nowSum - targetSum)
+    // 종료 조건
+    if (count == n)
     {
-        bestDis = nowSum - targetSum;
-        answer = temp;
-        return;
-    }
+        // 점수 계산
+        int myPoint = 0;
+        int AnotherPoint = 0;
 
-    for (int i = 0; i < shotCount; i++)
-    {
-        if (visit[i])
-            continue;
-
-        int tempCount = nowCount;
-        int tempSum = nowSum;
-        int tempTargetSum = targetSum;
-        
-        // 현재 시점에서 얻을 수 없는 과녁판임
-        if (nowCount + info[i] + 1 > n)
+        for (int i = 0; i < 10; i++)
         {
-            continue;
+            if (nows[i] > info[i])
+                myPoint += values[i];
+            else if (info[i] != 0)
+                AnotherPoint += values[i];
         }
-        
-        tempSum += points[i];
 
-        if(info[i] > 0)
-            tempTargetSum -= points[i];
+        int dis = myPoint - AnotherPoint;
 
-        temp[i] = info[i] + 1;
-        tempCount += temp[i];
-        visit[i] = true;
+        if (dis > bestDis)
+        {
+            bestDis = dis;
+            bestAnswer = nows;
+        }
+        else if (dis == bestDis&&
+            dis != 0)
+        {
+            bool bChanged = false;
+            for (int i = 10; i >= 0; i--)
+            {
+                if (nows[i] > bestAnswer[i])
+                {
+                    bChanged = true;
+                    break;
+                }
+                else if (bestAnswer[i] > nows[i])
+                    break;
+            }
 
-        findRecur(n, info, temp, answer, visit, tempTargetSum, tempSum, tempCount, bestDis);
+            if (bChanged)
+                bestAnswer = nows;
+        }
 
-        temp[i] = 0;
-        visit[i] = false;
+        return;
     }
 
-    if (nowSum > targetSum &&
-        bestDis <= nowSum - targetSum)
+    for (int i = idx; i < 11; i++)
     {
-        bestDis = nowSum - targetSum;
-        temp[10] = n - nowCount;
-        answer = temp;
+        int infV = (info[i] + 1);
+        int remains = n - count;
+
+        if (infV > remains)
+            infV = remains;
+
+        nows[i] += infV;
+        recur(n, info, nows, count + infV, idx + 1);
+        nows[i] -= infV;
     }
-    
+
 }
 
 vector<int> solution(int n, vector<int> info) {
-    vector<int> answer(shotCount,0);
-    vector<int> temp(shotCount,0);
-    vector<bool> visit(shotCount,false);
+    vector<int> temp(11);
 
-    int targetSum = 0;
-    for (int i = 0; i < shotCount; i++)
-    {
-        if (info[i] > 0)
-            targetSum += points[i];
-    }
-
-    int bestDis = 0;
-    findRecur(n, info, temp, answer, visit, targetSum, 0, 0, bestDis);
+    recur(n, info, temp, 0, 0);
 
     if (bestDis == 0)
-    {
-        answer.clear();
-        answer.push_back(-1);
-    }
+        return { -1 };
 
-    return answer;
+    return bestAnswer;
 }
