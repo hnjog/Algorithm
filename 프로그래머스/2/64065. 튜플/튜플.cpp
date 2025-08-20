@@ -1,69 +1,55 @@
 #include <string>
 #include <vector>
-#include<map>
-#include<algorithm>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
 vector<int> solution(string s) {
-	vector<int> answer;
-	map<int, int> m;
+    vector<int> answer;
 
-	int beforeNum = -1;
+    unordered_map<int, int> um;
+    
+    string it = ""; // 숫자 표현할 요소
 
-	for (char c : s)
-	{
-		switch (c)
-		{
-		case '{':
-		case ',':
-		{
-			if (beforeNum != -1)
-				m[beforeNum]++;
+    for (char c : s)
+    {
+        if (c == '{')
+        {
+            continue;
+        }
 
-			beforeNum = -1;
-		}
-		break;
-		case '}':
-		{
-			if (beforeNum != -1)
-			{
-				m[beforeNum]++;
-			}
-			beforeNum = -1;
-		}
-		break;
-		default: // 숫자
-		{
-			int v = int(c - '0');
+        if (c == ',' || c == '}')
+        {
+            if (it == "")
+                continue;
 
-			if (beforeNum != -1)
-			{
-				beforeNum *= 10;
-                beforeNum += v;
-			}
-			else
-			{
-				beforeNum = v;
-			}
-		}
-		break;
-		}
-	}
+            um[stoi(it)]++;
+            it = "";
+            continue;
+        }
 
-	vector<pair<int, int>> pv(m.begin(), m.end());
+        if (c >= '0' && c <= '9')
+        {
+            it += c;
+        }
+    }
 
-	sort(pv.begin(), pv.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-		if (a.second == b.second)
-			return a.first > b.first;
+    vector<pair<int, int>> vec;
+    for (auto it : um)
+    {
+        vec.push_back(it);
+    }
 
-		return a.second > b.second;
-		});
+    sort(vec.begin(), vec.end(), [](const pair<int, int>& a, const pair<int, int>& b)
+        {
+            return a.second > b.second;
+        });
 
-	for (const auto& p : pv)
-	{
-		answer.push_back(p.first);
-	}
+    for (const pair<int, int>& it : vec)
+    {
+        answer.push_back(it.first);
+    }
 
-	return answer;
+    return answer;
 }
