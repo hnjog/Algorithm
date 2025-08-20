@@ -5,63 +5,59 @@
 
 using namespace std;
 
-void recur(unordered_map<string, int>& sMap, string temp, const string& str, int index)
+void Recur(unordered_map<string, int>& allMenus,string& nowMenu, string temp, int idx)
 {
-	if (index >= str.size())
-	{
+	if (idx >= nowMenu.size())
 		return;
-	}
 
-	temp += str[index];
-	sMap[temp]++;
-
-	recur(sMap, temp, str, index + 1);
+	temp += nowMenu[idx];
+	allMenus[temp]++;
+	Recur(allMenus, nowMenu, temp, idx + 1);
 
 	temp.pop_back();
-
-	recur(sMap, temp, str, index + 1);
+	Recur(allMenus, nowMenu, temp, idx + 1);
 }
 
 vector<string> solution(vector<string> orders, vector<int> course) {
 	vector<string> answer;
-	unordered_map<string, int> sMap;
-	int countsArr[11] = { 0, };
+	int maxOrder[11] = { 0 };
+	unordered_map<string, int> allMenus;
 
-	for (string str : orders)
+	for (string order : orders)
 	{
-		sort(str.begin(), str.end());
-
-		recur(sMap, "", str, 0);
+		sort(order.begin(), order.end());
+		Recur(allMenus, order, "", 0);
 	}
 
-	for (const auto& it : sMap)
+	for (auto it : allMenus)
 	{
-		size_t s = it.first.size();
+		int menuSize = it.first.size();
+		int orderCount = it.second;
 
-		if (countsArr[s] < it.second)
-		{
-			countsArr[s] = it.second;
-		}
+		if (maxOrder[menuSize] < orderCount)
+			maxOrder[menuSize] = orderCount;
 	}
 
 	for (int length : course)
 	{
-		int maxLength = countsArr[length];
-		if (maxLength < 2)
+		if (maxOrder[length] < 2)
 			continue;
 
-		for (auto it : sMap)
+		for (auto it : allMenus)
 		{
-			if (it.first.size() != length)
+			int menuSize = it.first.size();
+			int orderCount = it.second;
+
+			if (length != menuSize)
 				continue;
 
-			if (it.second != maxLength)
+			if (maxOrder[menuSize] != orderCount)
 				continue;
 
 			answer.push_back(it.first);
 		}
 	}
-	
+
 	sort(answer.begin(), answer.end());
 
 	return answer;
