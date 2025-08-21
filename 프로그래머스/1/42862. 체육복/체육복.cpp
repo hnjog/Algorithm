@@ -1,4 +1,4 @@
-#include <string>
+#include <set>
 #include <vector>
 #include<algorithm>
 #include<math.h>
@@ -7,54 +7,35 @@ using namespace std;
 
 int solution(int n, vector<int> lost, vector<int> reserve) {
     int answer = n;
-
-    sort(lost.begin(), lost.end());
-    sort(reserve.begin(), reserve.end());
-
-    // 우선적으로 중복 제거하기 (unordered_set 쓰는게 제일 효율적일듯)
-    for (auto it1 = lost.begin(); it1 != lost.end();)
+    set<int> ls(lost.begin(),lost.end());
+    set<int> rs(reserve.begin(),reserve.end());
+    
+    // 자신의 체육복을 잃어버렸으나 여벌이 있다면 우선 제거
+    for(auto it = ls.begin(); it != ls.end(); it++)
     {
-        bool bDelete = false;
-        for (auto it2 = reserve.begin(); it2 != reserve.end();it2++)
+        if(rs.find(*it) != rs.end())
         {
-            if (*it1 == *it2)
-            {
-                bDelete = true;
-                it1 = lost.erase(it1);
-                reserve.erase(it2);
-                break;
-            }
-        }
-
-        if (!bDelete)
-        {
-            it1++;
+            ls.erase(*it);
+            rs.erase(*it);
         }
     }
-
-    int s = lost.size();
-
-    for (int i = 0; i < s; i++)
+    
+    for(auto it = ls.begin(); it != ls.end();it++)
     {
-        int l = lost[i];
-
-        bool bFind = false;
-
-        // 조건에 맞는 reserve가 있는가
-        for (auto it = reserve.begin(); it != reserve.end(); it++)
+        bool bDeleted = false;
+        for(auto it2 = rs.begin();it2 != rs.end();it2++)
         {
-            if (abs(l - *it) == 1)
+            if(abs(*it - *it2) <= 1)
             {
-                bFind = true;
-                reserve.erase(it);
+                bDeleted = true;
+                rs.erase(*it2);
                 break;
             }
         }
-
-        if (bFind == false)
-        {
+        
+        if(bDeleted == false)
             answer--;
-        }
+        
     }
 
     return answer;
