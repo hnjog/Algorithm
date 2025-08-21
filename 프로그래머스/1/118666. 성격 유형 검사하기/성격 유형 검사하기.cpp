@@ -5,7 +5,7 @@ using namespace std;
 
 string solution(vector<string> survey, vector<int> choices) {
     string answer = "";
-    	int rtSum = 0;
+    int rtSum = 0;
 	int cfSum = 0;
 	int jmSum = 0;
 	int anSum = 0;
