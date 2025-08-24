@@ -1,6 +1,7 @@
 #include <vector>
 #include<map>
 #include<algorithm>
+#include<iostream>
 
 using namespace std;
 
@@ -24,7 +25,7 @@ int solution(int k, vector<int> tangerine) {
 
     int sum = 0;
 
-    for (auto p : v)
+    for (auto& p : v)
     {
         answer++;
         sum += p.second;
