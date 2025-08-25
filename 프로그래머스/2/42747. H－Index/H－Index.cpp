@@ -1,7 +1,6 @@
 #include <string>
 #include <vector>
 #include <algorithm>
-#include<iostream>
 
 using namespace std;
 
@@ -15,11 +14,13 @@ int solution(vector<int> citations) {
     
     for(int i = 0; i < size; i++)
     {
-        cout << sC[i] << endl;
-        
         if(sC[i] >= i + 1)
         {
             answer++;
+        }
+        else
+        {
+            break;
         }
     }
     
