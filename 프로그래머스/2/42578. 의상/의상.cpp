@@ -11,16 +11,10 @@ int solution(vector<vector<string>> clothes) {
     
     for(int i = 0; i < cSize;i++)
     {
-        if(m.find(clothes[i][1]) == m.end())
-        {
-            m[clothes[i][1]] = 1;
-        }
-        else
-        {
-            m[clothes[i][1]] += 1;
-        }
+         m[clothes[i][1]]++;
     }
     
+    // 의상 조합의 개수
     for(auto a : m)
     {
         answer *= (a.second + 1);
