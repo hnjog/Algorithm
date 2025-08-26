@@ -1,44 +1,45 @@
-#include <string>
 #include <vector>
-#include<queue>
-#include<algorithm>
+#include <queue>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
+typedef pair<int,int> pii;
+
 int solution(vector<int> priorities, int location) {
-    int answer = 0;
-    queue<pair<int, int>> que;
-
-    int pSize = priorities.size();
-
-    for (int i = 0; i < pSize; i++)
+    int answer = 1;
+    queue<pii> q;
+    
+    for(int i = 0; i < priorities.size();i++)
     {
-        que.push(make_pair(priorities[i], i));
+        q.push({priorities[i],i});
     }
-
-    sort(priorities.begin(), priorities.end());
-
-    while (que.empty() == false)
+    
+    sort(priorities.begin(),priorities.end(),greater<int>());
+    int pIdx = 0;
+    
+    while(q.empty() == false)
     {
-        pair<int, int> a = que.front();
-        que.pop();
-
-        if (priorities.back() == a.first)
+        auto p = q.front();
+        q.pop();
+        
+        if(p.first == priorities[pIdx])
         {
-            answer++;
-
-            if (a.second == location)
-            {
+            pIdx++;
+            
+            if(p.second == location)
                 break;
-            }
-
-            priorities.pop_back();
+            
+            answer++;
+            
         }
         else
         {
-            que.push(a);
+            q.push(p);
         }
     }
-
+    
+    
     return answer;
 }
