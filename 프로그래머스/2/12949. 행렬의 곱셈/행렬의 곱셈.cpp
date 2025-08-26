@@ -1,4 +1,3 @@
-#include <string>
 #include <vector>
 
 using namespace std;
@@ -10,7 +9,6 @@ vector<vector<int>> solution(vector<vector<int>> arr1, vector<vector<int>> arr2)
 
     // A X B * C X D = A X D 행렬
     vector<vector<int>> answer(ar1Size, vector<int>(ar2XSize, 0));
-
 
     for (int i = 0; i < ar1Size; i++) // A
     {
