@@ -5,26 +5,28 @@ using namespace std;
 
 int main()
 {
-	int n,m;
+	int n, m;
 	cin >> n >> m;
 	string str;
 	cin >> str;
 
-	string findStr = "I";
-	for (int i = 0; i < n; i++)
-		findStr += "OI";
-
 	int result = 0;
+	int count = 0;
 
-	int fSize = findStr.size();
-
-	for (int i = 0; i < str.size() - fSize + 1; i++)
+	for (int i = 1; i < m - 1; i++)
 	{
-		if (str[i] == 'I')
+		if (str[i - 1] == 'I' &&
+			str[i] == 'O' &&
+			str[i + 1] == 'I')
 		{
-			string temp(str.begin() + i, str.begin() + i + fSize);
-			if (temp == findStr)
+			count++;
+			if (count >= n)
 				result++;
+			i++;
+		}
+		else
+		{
+			count = 0;
 		}
 	}
 
