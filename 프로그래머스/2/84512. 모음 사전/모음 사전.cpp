@@ -5,43 +5,30 @@ using namespace std;
 
 const int c_range = 5;
 const char c_arr[c_range] = { 'A','E','I','O','U' };
-bool isFind = false;
 
-void recur(const string& targetWord, string nowWord, int& count);
-
-int solution(string word) {
-    int answer = 0;
-    recur(word, "", answer);
-
-    int b = 10;
-
-    return answer;
-}
-
-void recur(const string& targetWord, string nowWord, int& count)
+int recur(const string& targetWord, string nowWord, int&& count)
 {
     if (targetWord == nowWord)
     {
-        isFind = true;
-        return;
+        return count;
     }
 
     if (nowWord.size() >= c_range)
     {
-        return;
+        return 0;
     }
 
     for (int i = 0; i < c_range; i++)
     {
-        if (isFind)
-        {
-            break;
-        }
-
-        string temp = nowWord;
-        nowWord += c_arr[i];
         count++;
-        recur(targetWord, nowWord, count);
-        nowWord = temp;
+        int ret = recur(targetWord, nowWord + c_arr[i], move(count));
+        if (ret != 0)
+            return ret;
     }
+
+    return 0;
+}
+
+int solution(string word) {
+    return recur(word, "", 0);
 }
