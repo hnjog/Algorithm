@@ -3,26 +3,26 @@
 
 using namespace std;
 
-void recur(int now, int y, const int n, unordered_map<int, int>& m,int count)
+void recur(int now, int x, int n, unordered_map<int, int>& m,int count)
 {
-    if (y == now)
+    if (x == now)
     {
-        if (m.find(y) == m.end())
+        if (m.find(x) == m.end())
         {
-            m[y] = count;
+            m[x] = count;
         }
         else
         {
-            if (m[y] > count)
+            if (m[x] > count)
             {
-                m[y] = count;
+                m[x] = count;
             }
         }
 
         return;
     }
 
-    if (now > y)
+    if (now < x)
         return;
 
     if (m.find(now) == m.end())
@@ -41,19 +41,20 @@ void recur(int now, int y, const int n, unordered_map<int, int>& m,int count)
         }
     }
 
-    recur(now + n, y, n, m, count + 1);
-    recur(now * 2, y, n, m, count + 1);
-    recur(now * 3, y, n, m, count + 1);
-
+    if(now % 3 == 0)
+        recur(now / 3, x, n, m, count + 1);
+    if(now % 2 == 0)
+        recur(now / 2, x, n, m, count + 1);
+    recur(now - n, x, n, m, count + 1);
 }
 
 int solution(int x, int y, int n) {
     unordered_map<int, int> m;
 
-    recur(x, y, n, m,0);
+    recur(y, x, n, m,0);
 
     int answer = -1;
-    if (m.find(y) != m.end())
-        answer = m[y];
+    if (m.find(x) != m.end())
+        answer = m[x];
     return answer;
 }
