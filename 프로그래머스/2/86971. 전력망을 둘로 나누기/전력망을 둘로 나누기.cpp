@@ -1,48 +1,62 @@
-#include <string>
 #include <vector>
-#include<math.h>
-#include<limits.h>
+#include <unordered_map>
+#include <limits.h>
 
 using namespace std;
 
-vector<int> tree[101];
-int subtreeSize[101];
-bool visited[101];
+int dfs(unordered_map<int, vector<int>>& maps, vector<bool>& visit, int now,int notVisit)
+{
+    if (now == notVisit)
+        return 0;
 
-int dfs(int node);
+    if (visit[now])
+        return 0;
+
+    visit[now] = true;
+
+    int ret = 1;
+    for (int next : maps[now])
+    {
+        ret += dfs(maps, visit, next, notVisit);
+    }
+
+    return ret;
+}
+
+int GetNodeCount(int n,unordered_map<int, vector<int>>& maps, int start, int notVisit)
+{
+    vector<bool> visit(n + 1);
+    return dfs(maps, visit, start, notVisit);
+}
 
 int solution(int n, vector<vector<int>> wires) {
     int answer = INT_MAX;
+    // 그냥 wire 마다 짜르고
+    // 짜른 부위마다 dfs 돌려서
+    // 나온 개수 1 - 나온 개수 2 절댓값 구하기
 
-    for (int i = 0; i < n - 1; i++)
+    unordered_map<int, vector<int>> maps;
+
+    for (auto& wire : wires)
     {
-        int u = wires[i][0];
-        int v = wires[i][1];
-        tree[u].push_back(v);
-        tree[v].push_back(u);
+        int s = wire[0];
+        int t = wire[1];
+
+        maps[s].push_back(t);
+        maps[t].push_back(s);
     }
 
-    dfs(1);
+    for (auto& wire : wires)
+    {
+        int v1 = GetNodeCount(n, maps, wire[0], wire[1]);
+        int v2 = GetNodeCount(n, maps, wire[1], wire[0]);
 
-    for (int i = 2; i <= n; i++) {
-        int diff = abs(n - 2 * subtreeSize[i]);
-        if (diff < answer) {
-            answer = diff;
-        }
+        if (v2 > v1)
+            swap(v1, v2);
+
+        if (answer > v1 - v2)
+            answer = v1 - v2;
     }
 
     return answer;
-}
-
-int dfs(int node) {
-    visited[node] = true;
-    subtreeSize[node] = 1; // 현재 노드 포함
-
-    for (int child : tree[node]) {
-        if (!visited[child]) {
-            subtreeSize[node] += dfs(child);
-        }
-    }
-
-    return subtreeSize[node];
 }
