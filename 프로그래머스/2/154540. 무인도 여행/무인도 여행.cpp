@@ -1,70 +1,56 @@
 #include <string>
 #include <vector>
-#include<queue>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
-void BFS(const vector<string>& maps,int x,int y, vector<vector<bool>>& visited, vector<int>& answer)
+void recur(vector<string>& maps, vector<int>& answer, int& now, int y, int x)
 {
-    queue<pair<int,int>> q;
-
-    q.push({y, x });
-
-    int sum = 0;
-
-    while (q.empty() == false)
-    {
-        auto p = q.front();
-        q.pop();
-
-        if (p.first < 0 || p.second < 0 ||
-            p.first >= maps.size() || p.second >= maps[0].size())
-            continue;
-
-        if (maps[p.first][p.second] == 'X')
-            continue;
-
-        if (visited[p.first][p.second])
-            continue;
-
-        visited[p.first][p.second] = true;
-
-        sum += static_cast<int>(maps[p.first][p.second] - '0');
-
-        q.push({ p.first - 1,p.second });
-        q.push({ p.first + 1,p.second });
-        q.push({ p.first,p.second - 1 });
-        q.push({ p.first,p.second + 1 });
-    }
-
-    answer.push_back(sum);
+    if(y < 0 || y >= maps.size() ||
+      x < 0 || x >= maps[0].size())
+        return;
+    
+    if(maps[y][x] == 'X' ||
+      maps[y][x] == '0')
+        return;
+    
+    now += (maps[y][x] - '0');
+    maps[y][x] = '0';
+    
+    recur(maps,answer,now,y-1,x);
+    recur(maps,answer,now,y+1,x);
+    recur(maps,answer,now,y,x-1);
+    recur(maps,answer,now,y,x+1);
 }
 
-vector<int> solution(vector<string> maps) {
-    vector<int> answer;
-    // dfs or bfs
-    // visited 활용
-    vector<vector<bool>> visited(maps.size(), vector<bool>(maps[0].size(), false));
-
-    for (int i = 0; i < maps.size(); i++)
+void DFS(vector<string>& maps, vector<int>& answer)
+{
+    int n = maps.size();
+    int m = maps[0].size();
+    
+    for(int i = 0; i < n; i++)
     {
-        for (int j = 0; j < maps[i].size(); j++)
+        for(int j = 0; j < m;j++)
         {
-            if (visited[i][j] == true)
+            if(maps[i][j] == 'X' ||
+              maps[i][j] == '0')
                 continue;
-
-            if (maps[i][j] == 'X')
-                continue;
-
-            BFS(maps, j, i, visited, answer);
+            
+            int v = 0;
+            recur(maps,answer,v,i,j);
+            answer.push_back(v);
         }
     }
+    
+}
 
-    if (answer.size() == 0)
+vector<int> solution(vector<string> maps) 
+{
+    vector<int> answer;
+    DFS(maps,answer);
+    if(answer.empty())
         answer.push_back(-1);
-    else
-        sort(answer.begin(), answer.end());
-
+    
+    sort(answer.begin(),answer.end());
     return answer;
 }
