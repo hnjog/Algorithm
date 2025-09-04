@@ -1,63 +1,54 @@
 #include <string>
 #include <vector>
-#include<algorithm>
-#include<queue>
+#include <algorithm>
 
 using namespace std;
 
+int getTimeValue(string& time)
+{
+    int hourV = ((time[0] - '0') * 10 + (time[1]- '0')) * 60;
+    int minV = ((time[3]- '0') * 10 + (time[4]- '0'));
+    
+    return hourV + minV;
+}
+
+bool canUse(string& bookTime, string& roomTime)
+{
+    if(getTimeValue(bookTime) >= getTimeValue(roomTime) + 10)
+        return true;
+    
+    return false;
+}
+
 int solution(vector<vector<string>> book_time) {
-	int answer = 1;
-
-	vector<pair<int, int>> times;
-
-	for (const auto& book : book_time)
-	{
-		int startTime = ((book[0][0] - '0') * 10 + (book[0][1] - '0')) * 60 + (book[0][3] - '0') * 10 + (book[0][4] - '0');
-		int endTime = ((book[1][0] - '0') * 10 + (book[1][1] - '0')) * 60 + (book[1][3] - '0') * 10 + (book[1][4] - '0');
-
-		times.push_back({ startTime, endTime + 10 });
-	}
-
-	sort(times.begin(), times.end(), [](const auto& a, const auto& b)
+    int answer = 0;
+	sort(book_time.begin(), book_time.end(),
+		[](auto& a, auto& b)
 		{
-			if (a.first == b.first)
-				return a.second > b.second;
-
-			return a.first < b.first;
-		});
-
-	priority_queue<int, vector<int>, less<int>> pq;
-	pq.push(times[0].second);
-
-	for (int i = 1; i < times.size(); i++)
-	{
-		int startTime = times[i].first;
-		int endTime = times[i].second;
-
-		if (answer < pq.size())
-			answer = pq.size();
-
-		vector<int> temp;
-		while (pq.empty() == false)
-		{
-			int lastTime = pq.top();
-			pq.pop();
-			if (lastTime > startTime)
-			{
-				temp.push_back(lastTime);
-			}
+			return getTimeValue(a[0]) < getTimeValue(b[0]);
 		}
-
-		for (int i = 0; i < temp.size(); i++)
-		{
-			pq.push(temp[i]);
-		}
-
-		pq.push(endTime);
-	}
-
-	if (answer < pq.size())
-		answer = pq.size();
-
-	return answer;
+	);
+    vector<string> rooms;
+    
+    for(auto& book : book_time)
+    {
+        bool bNeedNewRoom = true;
+        for(string& st : rooms)
+        {
+            if(canUse(book[0],st))
+            {
+                bNeedNewRoom = false;
+                st = book[1];
+                break;
+            }
+        }
+        
+        if(bNeedNewRoom)
+        {
+            answer++;
+            rooms.push_back(book[1]);
+        }
+    }
+    
+    return answer;
 }
