@@ -1,140 +1,126 @@
 #include <string>
 #include <vector>
-#include<map>
-#include<math.h>
 
 using namespace std;
 
-bool check(const vector<string>& place)
+struct pos
 {
-	map<pair<int, int>, bool> ps;
-	for (int i = 0; i < 5; i++)
+	int y, x;
+};
+
+bool CheckDistance(const pos& a, const pos& b, const vector<string>& map)
+{
+	int minx = a.x;
+	int maxx = b.x;
+
+	if (maxx < minx)
+		swap(maxx, minx);
+
+	int miny = a.y;
+	int maxy = b.y;
+
+	if (maxy < miny)
+		swap(maxy, miny);
+
+	int dis = maxy - miny + maxx - minx;
+
+	if (dis == 1)
+		return false;
+
+	if (dis > 2)
+		return true;
+
+	if (maxy == miny)
 	{
-		for (int j = 0; j < 5; j++)
+		if (map[miny][minx + 1] == 'X')
+			return true;
+
+		return false;
+	}
+
+	if (maxx == minx)
+	{
+		if (map[miny + 1][minx] == 'X')
+			return true;
+
+		return false;
+	}
+
+	// 대각선 상황들
+	if (maxx == a.x)
+	{
+		if (maxy == a.y)
 		{
-			if (place[i][j] == 'P')
-			{
-				ps.insert({ { i,j }, false });
-			}
+			if (map[miny + 1][minx] == 'X' &&
+				map[miny][minx + 1] == 'X')
+				return true;
+		}
+		else // / 상황
+		{
+			// a가 위쪽
+			if (map[a.y][b.x] == 'X' &&
+				map[b.y][a.x] == 'X')
+				return true;
+		}
+	}
+	else // a가 작은 쪽 x
+	{
+		if (maxy == b.y) // b가 y가 크다면 위와 동일한 \ 상황임
+		{
+			if (map[miny + 1][minx] == 'X' &&
+				map[miny][minx + 1] == 'X')
+				return true;
+		}
+		else // / 상황
+		{
+			// a는 아래쪽
+			if (map[b.y][a.x] == 'X' &&
+				map[a.y][b.x] == 'X')
+				return true;
 		}
 	}
 
-	for (auto it1 = ps.begin(); it1 != ps.end(); it1++)
-	{
-		for (auto it2 = it1; it2 != ps.end(); it2++)
-		{
-			if (it1 == it2)
-				continue;
-
-			// 이미 검사함
-			if (it1->second)
-				continue;
-
-			const pair<int, int>& oPos = it1->first;
-			const pair<int, int>& tPos = it2->first;
-
-			int yDis = abs(oPos.first - tPos.first);
-			int xDis = abs(oPos.second - tPos.second);
-
-			// 이 공간은 잘못됬음
-			if (xDis + yDis == 1)
-				return false;
-
-			// 거리 3 이상이면 조건 만족한다
-			if (xDis + yDis >= 3)
-				continue;
-
-			// 거리가 2일때
-			// 그 사이에 X로 막혀있는지를 확인하기
-
-			// 1자형으로 떨어져 있는 경우
-			if (xDis == 0 || yDis == 0)
-			{
-				if (xDis == 0) // |
-				{
-					int yValue = (oPos.first + tPos.first) / 2;
-					if (place[yValue][oPos.second] != 'X')
-					{
-						return false;
-					}
-				}
-				else // -
-				{
-					int xValue = (oPos.second + tPos.second) / 2;
-					if (place[oPos.first][xValue] != 'X')
-					{
-						return false;
-					}
-				}
-			}
-			else // 대각선
-			{
-				int xValue = oPos.second - tPos.second;
-				int yValue = oPos.first - tPos.first;
-
-				if (xValue < 0)
-				{
-					if (yValue < 0)
-					{
-						// x와 y 값 모두 tPos가 큰 상황
-						if (place[tPos.first][oPos.second] != 'X' ||
-							place[oPos.first][tPos.second] != 'X')
-						{
-							return false;
-						}
-					}
-					else
-					{
-						// x값은 tPos가, y값은 oPos가 큰 상황
-						if (place[oPos.first][tPos.second] != 'X' ||
-							place[tPos.first][oPos.second] != 'X')
-						{
-							return false;
-						}
-					}
-				}
-				else // x값이 oPos가 더 크다
-				{
-					if (yValue < 0)
-					{
-						// x값은 oPos가, y값은 tPos가 큰 상황
-						if (place[oPos.first][tPos.second] != 'X' ||
-							place[tPos.first][oPos.second] != 'X')
-						{
-							return false;
-						}
-					}
-					else
-					{
-						// x와 y 값 모두 oPos가 큰 상황
-						if (place[oPos.first][tPos.second] != 'X' ||
-							place[tPos.first][oPos.second] != 'X')
-						{
-							return false;
-						}
-					}
-				}
-			}
-		}
-		it1->second = true;
-	}
-
-	return true;
+	return false;
 }
 
 vector<int> solution(vector<vector<string>> places) {
 	vector<int> answer;
 
-	for (const auto& place : places)
+	for (auto& p : places)
 	{
-		if (check(place))
+		vector<pos> pla;
+		int h = p.size();
+		int w = p[0].size();
+		for (int i = 0; i < h; i++)
 		{
+			for (int j = 0; j < w; j++)
+			{
+				if (p[i][j] == 'P')
+					pla.push_back({ i,j });
+			}
+		}
+
+		int size = answer.size();
+		bool isRight = true;
+		for (int i = 0; i < pla.size(); i++)
+		{
+			for (int j = i + 1; j < pla.size(); j++)
+			{
+				if (CheckDistance(pla[i], pla[j], p) == false)
+				{
+					isRight = false;
+					break;
+				}
+			}
+			if (isRight == false)
+				break;
+		}
+
+		if (isRight)
 			answer.push_back(1);
-		}
 		else
-		{
 			answer.push_back(0);
-		}
+
 	}
 
 	return answer;
