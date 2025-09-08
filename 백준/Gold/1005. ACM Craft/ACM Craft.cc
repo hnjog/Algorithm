@@ -82,7 +82,6 @@ int main()
 			cin >> nodemap[i].value;
 		}
 
-		// '거꾸로' 등록하고 목적지에서 시작할 예정
 		for (int i = 0; i < k; i++)
 		{
 			int start, to;
