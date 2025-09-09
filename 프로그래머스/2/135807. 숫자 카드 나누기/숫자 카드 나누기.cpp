@@ -1,71 +1,69 @@
 #include <vector>
-#include<algorithm>
+#include <algorithm>
+#include <math.h>
 
 using namespace std;
 
-int check(vector<int>& a, vector<int>& b)
+vector<int> getR(int m)
 {
-    int result = -1;
+    if(m <= 1)
+        return vector<int>();
     
-    int minV = a[0];
+    vector<int> ret;
     
-    for(int i = minV; i >= 2; i--)
+    for(int i = m; i >= 2;i--)
     {
-        bool fb = true;
-        
-        for(int t : a)
+        if(m % i == 0)
+        {
+            ret.push_back(i);
+            ret.push_back(m / i);
+        }
+    }
+    
+    sort(ret.begin(),ret.end(), greater<int>());
+    
+    return ret;
+}
+
+int findValue(vector<int>& tArr, vector<int>& nArr)
+{
+    int m = tArr[0];
+    vector<int> vs = getR(m);
+    for(int i : vs)
+    {
+        bool checkT = true, checkN = true;
+        for(int t : tArr)
         {
             if(t % i != 0)
             {
-                fb = false;
+                checkT = false;
                 break;
             }
         }
         
-        if(fb == false)
-            continue;
-        
-        bool sb = true;
-        
-        for(int t : b)
+        for(int n : nArr)
         {
-            if(t % i == 0)
+            if(n % i == 0)
             {
-                sb = false;
+                checkN = false;
                 break;
             }
         }
         
-        if(sb == false)
-            continue;
-        
-        result = i;
-        break;
+        if(checkT && checkN)
+        {
+            return i;
+        }
     }
-    
-    return result;
+    return 0;
 }
 
-int solution(vector<int> a, vector<int> b) {
+int solution(vector<int> arrayA, vector<int> arrayB) {
     int answer = 0;
-    sort(a.begin(),a.end());
-    sort(b.begin(),b.end());
+    sort(arrayA.begin(),arrayA.end());
+    sort(arrayB.begin(),arrayB.end());
     
-    if(int aResult = check(a,b))
-    {
-        if(aResult > answer)
-        {
-            answer = aResult;
-        }
-    }
-    
-    if(int bResult = check(b,a))
-    {
-        if(bResult > answer)
-        {
-            answer = bResult;
-        }
-    }
-    
+    answer = findValue(arrayA,arrayB);
+    answer = max(answer,findValue(arrayB,arrayA));
     return answer;
 }
