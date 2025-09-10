@@ -2,28 +2,34 @@
 
 using namespace std;
 
-int getMax(int w, int b)
+int getLV(int w, int h)
 {
-	if (w == b)
-		return w;
+    int ret = 1;
 
-	int minV = min(w, b);
+    int iV = 2;
+    int s = min(w, h);
 
-	int ret = 1;
+    while (iV <= s)
+    {
+        if (w % iV == 0 &&
+            h % iV == 0)
+        {
+            ret = iV;
+        }
 
-	for (int i = 2; i <= minV; i++)
-	{
-		if (w % i == 0 && b % i == 0)
-		{
-			ret = i;
-		}
-	}
+        iV++;
+    }
 
-	return ret;
+    return ret;
 }
 
 long long solution(int w, int h) {
-	long long answer = (long long)w * h - (w + h - getMax(w,h));
+    long long answer = w * (long long)h;
+    int lv = getLV(w, h);
+    
+    answer -= w;
+    answer -= h;
+    answer += lv;
 
-	return answer;
+    return answer;
 }
