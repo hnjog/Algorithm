@@ -6,24 +6,36 @@ using namespace std;
 int solution(vector<vector<int>> data, int col, int row_begin, int row_end) {
 	int answer = 0;
 
-	sort(data.begin(), data.end(), [=](const auto& a, const auto& b) {
-		if (a[col - 1] == b[col - 1])
-			return a[0] > b[0];
+	col--;
+	row_begin--;
+	row_end--;
 
-		return a[col - 1] < b[col - 1];
+	sort(data.begin(), data.end(), [=]
+	(const vector<int>& a, const vector<int>& b)
+		{
+			if (a[col] == b[col])
+				return a[0] > b[0];
+
+			return a[col] < b[col];
 		});
 
-	for (int i = row_begin - 1; i <= row_end - 1; i++)
+	vector<int> values;
+
+	for (int i = row_begin; i <= row_end; i++)
 	{
-		int temp = 0;
-		for (int j = 0; j < data[i].size(); j++)
+		int sum = 0;
+		for (int j = 0; j < data[0].size(); j++)
 		{
-			int temp2 = data[i][j] % (i + 1);
-			temp += temp2;
+			sum += data[i][j] % (i+1);
 		}
 
-		answer ^= temp;
+		values.push_back(sum);
 	}
+
+	answer = values[0];
+
+	for (int i = 1; i < values.size(); i++)
+		answer ^= values[i];
 
 	return answer;
 }
