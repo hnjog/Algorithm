@@ -1,52 +1,58 @@
 #include <vector>
-#include<algorithm>
+#include <unordered_map>
 
 using namespace std;
 
-typedef long long ll;
+long long solution(vector<int> weights) {
+    long long answer = 0;
 
-ll solution(vector<int> weights) {
-	ll answer = 0;
+    unordered_map<long, long> weightsMap;
 
-	sort(weights.begin(), weights.end());
+    for (int w : weights)
+    {
+        weightsMap[w]++;
+    }
 
-	const int wSize = weights.size();
+    for (auto it1 = weightsMap.begin(); it1 != weightsMap.end(); it1++)
+    {
+        answer += (it1->second * (it1->second - 1)) / 2;
+    }
 
-	for (int i = 0; i < wSize; i++)
-	{
-		int num = weights[i];
+    for (auto it1 = weightsMap.begin(); it1 != weightsMap.end(); it1++)
+    {
+        for (auto it2 = next(it1); it2 != weightsMap.end(); it2++)
+        {
+            long w1 = it1->first;
+            long w2 = it2->first;
 
-		int tn = num * 2;
-		int ttn = num * 3;
-		int fn = num * 4;
+            bool isFair = false;
+            if (w1 == w2)
+                isFair = true;
+            else
+            {
+                long w12 = w1 * 2;
+                long w13 = w1 * 3;
+                long w14 = w1 * 4;
 
-		for (int j = i + 1; j < wSize; j++)
-		{
-			int tNum = weights[j];
+                long w22 = w2 * 2;
+                long w23 = w2 * 3;
+                long w24 = w2 * 4;
 
-			// 배수를 맞출수 없는 상황
-			if (tNum >= fn)
-				break;
+                if (w12 == w23 ||
+                    w12 == w24 ||
+                    w13 == w22 ||
+                    w13 == w24 ||
+                    w14 == w22 ||
+                    w14 == w23)
+                    isFair = true;
+            }
 
-			if (tNum == num)
-			{
-				answer++;
-				continue;
-			}
+            if (isFair)
+            {
+                answer += (long long)it1->second * it2->second;
+            }
+        }
+    }
 
-			int doubleNum = tNum * 2;
-			if (doubleNum > fn)
-				break;
-
-			int tripleNum = tNum * 3;
-			int fourNum = tNum * 4;
-
-			if (doubleNum == ttn ||
-				doubleNum == fn ||
-				tripleNum == fn)
-				answer++;
-		}
-	}
-
-	return answer;
+    return answer;
 }
