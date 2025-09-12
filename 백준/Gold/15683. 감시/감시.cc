@@ -44,14 +44,9 @@ void sprayView(vector<vector<int>>& map, const pos& p, int mainDir,vector<pos>& 
 
 vector<pos> setView(vector<vector<int>>& map, const pos& p, int mainDir)
 {
-	int y = p.y;
-	int x = p.x;
-
-	int ny = y, nx = x;
-
 	vector<pos> ret;
 
-	switch (map[y][x])
+	switch (map[p.y][p.x])
 	{
 	case 1:
 	{
