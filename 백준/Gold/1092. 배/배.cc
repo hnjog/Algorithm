@@ -1,26 +1,11 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
-#include<queue>
 
 using namespace std;
 
 int main()
 {
-	// 크레인과 박스들이 주어짐
-	// 
-	// 크레인은 자신보다 무거운 박스는 들지 못함
-	// 
-	// 박스를 그룹화 시키는 것은?
-	// 
-	// 1 크레인이 들 수 있는 박스
-	// 2 크레인이 들 수 있는 박스?
-	// 
-	// 박스들이 각각 자신이 들 수 있는 무거운 박스를 들어야 하는것은 맞음
-	// 
-	// 
-	//
-
 	int n;
 	cin >> n;
 	vector<int> crains(n);
