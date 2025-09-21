@@ -1,7 +1,6 @@
 #include<iostream>
 #include<queue>
 #include<string>
-#include<stack>
 
 using namespace std;
 
@@ -10,74 +9,59 @@ int main()
 	string str;
 	cin >> str;
 
-
 	int answer = 0;
-	deque<char> dq;
-	// bc 검사
-	for (char c : str)
+	queue<pair<int, char>> aq, bq, cq;
+
+	for (int i = 0; i < str.size(); i++)
 	{
-		if (dq.empty() == false
-			&& c == 'C')
+		char c = str[i];
+
+		if (c == 'C')
 		{
-			stack<char> st;
-			while (dq.empty() == false &&
-				dq.front() != 'B')
-			{
-				st.push(dq.front());
-				dq.pop_front();
-			}
-
-			if (dq.empty() == false &&
-				dq.front() == 'B')
-			{
-				answer++;
-				dq.pop_front();
-			}
-
-			while (st.empty() == false)
-			{
-				dq.push_front(st.top());
-				st.pop();
-			}
+			cq.push({ i,c });
 		}
+		else if (c == 'B')
+			bq.push({ i,c });
 		else
-			dq.push_back(c);
+			aq.push({ i,c });
 	}
 
-	int dSize = dq.size();
-	for (int i = 0; i < dSize; i++)
+	if (cq.size() > 0 &&
+		bq.size() > 0)
 	{
-		if (dq.size() <= 1)
-			break;
-
-		if (dq.front() == 'A')
+		while (cq.empty() == false &&
+			bq.empty() == false)
 		{
-			stack<char> st;
-			st.push(dq.front());
-			dq.pop_front();
-
-			while (dq.empty() == false &&
-				dq.front() != 'B')
-			{
-				st.push(dq.front());
-				dq.pop_front();
-			}
-
-			if (dq.empty() == false &&
-				dq.front() == 'B')
+			if (bq.front().first < cq.front().first)
 			{
 				answer++;
-				dq.pop_front();
-				st.pop();
+				cq.pop();
+				bq.pop();
 			}
-			while (st.empty() == false)
+			else
 			{
-				dq.push_front(st.top());
-				st.pop();
+				cq.pop();
 			}
 		}
-		else
-			dq.pop_front();
+	}
+
+	if (bq.size() > 0 &&
+		aq.size() > 0)
+	{
+		while (aq.empty() == false &&
+			bq.empty() == false)
+		{
+			if (aq.front().first < bq.front().first)
+			{
+				answer++;
+				aq.pop();
+				bq.pop();
+			}
+			else
+			{
+				bq.pop();
+			}
+		}
 	}
 
 	cout << answer;
