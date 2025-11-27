@@ -34,18 +34,7 @@ int main()
 		}
 	}
 
-	int ans = 0;
-
-	for (auto& v : dp)
-	{
-		for (int i : v)
-		{
-			if (i > ans)
-				ans = i;
-		}
-	}
-
-	cout << ans;
+	cout << dp[m][k];
 
 	return 0;
 }
