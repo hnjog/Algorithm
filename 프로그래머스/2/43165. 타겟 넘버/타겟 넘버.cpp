@@ -1,27 +1,25 @@
-#include <string>
 #include <vector>
 
 using namespace std;
 
-int answer = 0;
-
-void recur(const vector<int>& numbers, const int target, int nowIdx, int nowValue)
+void dfs(const vector<int>& numbers, int target, int idx, int nowSum, int& count)
 {
-    int nSize = numbers.size();
-    if(nowIdx == nSize)
+    int ns = numbers.size();
+
+    if (idx >= ns)
     {
-        if(nowValue == target)
-            answer++;
-        
+        if (nowSum == target)
+            count++;
+
         return;
     }
-    
-    recur(numbers,target,nowIdx + 1,nowValue + numbers[nowIdx]);
-    recur(numbers,target,nowIdx + 1,nowValue - numbers[nowIdx]);
+
+    dfs(numbers, target, idx + 1, nowSum + numbers[idx], count);
+    dfs(numbers, target, idx + 1, nowSum - numbers[idx], count);
 }
 
-
 int solution(vector<int> numbers, int target) {
-    recur(numbers,target,0,0);
+    int answer = 0;
+    dfs(numbers, target, 0, 0, answer);
     return answer;
 }
