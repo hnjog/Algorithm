@@ -1,53 +1,54 @@
 #include <string>
 #include <vector>
-#include<algorithm>
+#include <unordered_set>
 
 using namespace std;
 
-void dfs(int start, vector<int>& parents, const vector<vector<int>>& computers)
+int FindParent(vector<int>& pv, int x)
 {
-	const auto& startEdges = computers[start];
+    if (pv[x] == x)
+        return x;
 
-	for (int i = 0; i < startEdges.size(); i++)
-	{
-		if (startEdges[i] == 1 && parents[i] != parents[start])
-		{
-			parents[i] = parents[start];
-			dfs(i, parents, computers);
-		}
-	}
+    return pv[x] = FindParent(pv, pv[x]);
+}
+
+bool Union(vector<int>& pv,int a,int b)
+{
+    a = FindParent(pv, a);
+    b = FindParent(pv, b);
+
+    if (a == b)
+        return false;
+
+    pv[a] = b;
+
+    return true;
 }
 
 int solution(int n, vector<vector<int>> computers) {
-	int answer = 1;
-	// vector<bool? 혹은 int> 로 자기 자신을 처음 '부모'로 인지시키고
-	// dfs 등을 돌며 '부모'를 갱신하기
-	// 마지막에 서로 다른 부모의 개수를 구하면 될듯?
+    vector<int> pv(n);
+    for (int i = 0; i < n; i++)
+        pv[i] = i;
 
-	vector<int> parents;
-	for (int i = 0; i < n; i++)
-	{
-		// 처음엔 자기자신이 부모
-		parents.push_back(i);
-	}
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j)
+                continue;
 
-	for (int i = 0; i < n; i++)
-	{
-		dfs(i, parents, computers);
-	}
+            if (computers[i][j] == 1)
+                Union(pv, i, j);
+        }
+    }
 
-	sort(parents.begin(), parents.end());
+    unordered_set<int> us;
+    us.reserve(n);
 
-	int begin = parents[0];
+    for (int p : pv)
+    {
+        us.insert(FindParent(pv,p));
+    }
 
-	for (int i = 1; i < n; i++)
-	{
-		if (parents[i] != begin)
-		{
-			answer++;
-			begin = parents[i];
-		}
-	}
-
-	return answer;
+    return us.size();
 }
