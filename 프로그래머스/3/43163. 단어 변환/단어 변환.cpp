@@ -1,56 +1,68 @@
 #include <string>
 #include <vector>
-#include <algorithm>
-#include <queue>
+#include <unordered_set>
 
 using namespace std;
 
-// 한 글자만 다른지 확인하는 함수
-bool canTransform(const string& from, const string& to)
+bool IsOneDiffer(const string& a, const string& b)
 {
-	int diff = 0;
-	for (int i = 0; i < from.size(); ++i)
+	if (a.size() != b.size())
+		return false;
+
+	int differCount = 0;
+
+	int ss = a.size();
+
+	for (int i = 0; i < ss; i++)
 	{
-		if (from[i] != to[i])
+		if (a[i] != b[i])
 		{
-			++diff;
+			differCount++;
 		}
+
+		if (differCount > 1)
+			break;
 	}
-	return diff == 1;
+
+	if (differCount != 1)
+		return false;
+
+	return true;
 }
 
-int solution(string begin, string target, vector<string> words)
+void dfs(const string& now, const string& target, const vector<string>& words, unordered_set<string>& us, int nowC, int& answer)
 {
-	// 목표 단어가 words 내부에 없다면 0 반환
-	if (find(words.begin(), words.end(), target) == words.end())
-		return 0;
-
-	queue<pair<string, int>> q;
-	vector<bool> visited(words.size(), false); // 방문 여부를 추적
-
-	q.push({ begin, 0 });
-
-	while (!q.empty())
+	if (now == target)
 	{
-		string current = q.front().first;
-		int steps = q.front().second;
-		q.pop();
-
-		if (current == target)
-			return steps;
-
-		// 모든 words를 순회하며 한 글자만 다른 단어를 찾기
-		for (int i = 0; i < words.size(); ++i)
+		if (answer == 0 ||
+			answer > nowC)
 		{
-			if (visited[i] == false &&
-				canTransform(current, words[i]) == true)
-			{
-				visited[i] = true;
-				q.push({ words[i], steps + 1 });
-			}
+			answer = nowC;
+		}
+
+		return;
+	}
+
+	us.insert(now);
+
+	for (const string& str : words)
+	{
+		if (us.find(str) != us.end())
+			continue;
+
+		if (IsOneDiffer(now, str) == true)
+		{
+			dfs(str, target, words, us, nowC + 1, answer);
 		}
 	}
 
-	// 변환할 수 없는 경우
-	return 0;
+	us.erase(now);
+}
+
+int solution(string begin, string target, vector<string> words) {
+	int answer = 0;
+	unordered_set<string> us;
+	us.reserve(words.size());
+	dfs(begin, target, words, us, 0, answer);
+	return answer;
 }
