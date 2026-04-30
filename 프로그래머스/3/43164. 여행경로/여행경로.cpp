@@ -1,67 +1,61 @@
 #include <string>
 #include <vector>
-#include<map>
-#include<algorithm>
+#include <unordered_map>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
-void searchRecur(const string& start, map<string, multimap<string, bool>>& maps, int nowCount, int count, vector<vector<string>>& loads, vector<string>& load)
+typedef pair<string, string> pss;
+
+bool dfs(int tSize, unordered_map<string, vector<string>>& um, map<pss,int>& pm, map<pss, int>& visit, const string& start, vector<string>& answer)
 {
-	if (nowCount == count)
+	answer.push_back(start);
+
+	if (tSize + 1 == answer.size())
 	{
-		loads.push_back(load);
-		return;
+		return true;
 	}
 
-	if (maps.find(start) == maps.end())
-		return;
-
-	for (auto& next : maps[start])
+	for (string& str : um[start])
 	{
-		// 중복 체크는 필요하다
-		if (next.second == true)
+		if (pm.find({ start,str }) == pm.end())
 			continue;
 
-		next.second = true;
-		load.push_back(next.first);
-		searchRecur(next.first, maps, nowCount + 1, count, loads, load);
-		load.pop_back();
-		next.second = false;
-	}
+		if (visit[{start, str}] >= pm[{start, str}])
+			continue;
 
+		visit[{start, str}]++;
+
+		if (dfs(tSize, um, pm,visit, str, answer) == true)
+			return true;
+
+		visit[{start, str}]--;
+	}
+	
+	answer.pop_back();
+	return false;
 }
 
 vector<string> solution(vector<vector<string>> tickets) {
-	//map<string, map<string, bool>> maps;
-	map<string, multimap<string, bool>> maps;
+	vector<string> answer;
+	unordered_map<string, vector<string>> um;
+	map<pss, int> pm,visit;
 
 	for (const auto& ticket : tickets)
 	{
-		if (maps.find(ticket[0]) == maps.end())
-		{
-			maps[ticket[0]] = multimap<string, bool>();
-		}
+		const string& start = ticket[0];
+		const string& target = ticket[1];
 
-		maps[ticket[0]].insert(make_pair(ticket[1], false));
+		um[start].push_back(target);
+		pm[{start, target}]++;
 	}
 
-	vector<vector<string>> loads;
-	vector<string> load;
-	load.push_back("ICN");
-
-	searchRecur("ICN", maps, 0, tickets.size(), loads, load);
-
-	sort(loads.begin(), loads.end(), [](const vector<string>& a, const vector<string>& b) {
-		for (int i = 0; i < a.size(); i++)
-		{
-			if (a[i] == b[i])
-				continue;
-
-			return a[i] < b[i];
-		}
-
-		return a.front() < b.front();
-		});
-
-	return loads[0];
+	for (auto& targets : um)
+	{
+		sort(targets.second.begin(), targets.second.end(), [](const string& a, const string& b) { return a < b; });
+	}
+	
+	dfs(tickets.size(), um, pm, visit, "ICN", answer);
+	return answer;
 }
