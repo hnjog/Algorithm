@@ -1,25 +1,29 @@
 #include <string>
-#include <vector>
+#include <queue>
 
 using namespace std;
 
 string solution(string number, int k) {
     string answer = "";
 
-    for (char digit : number) 
+    for (char c : number)
     {
-        while (answer.empty() == false &&
-            answer.back() < digit &&
-            k > 0) 
-        {
-            answer.pop_back();
-            k--;
-        }
-        
-        answer.push_back(digit);
+		while (answer.empty() == false &&
+			answer.back() < c &&
+			k > 0)
+		{
+			answer.pop_back();
+			k--;
+		}
+
+		answer.push_back(c);
     }
 
-    answer.erase(answer.size() - k, k);
+	while (k > 0)
+	{
+		answer.pop_back(); 
+		k--;
+	}
 
     return answer;
 }
