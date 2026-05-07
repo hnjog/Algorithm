@@ -6,43 +6,43 @@ using namespace std;
 int solution(int N, int number) {
 	int answer = -1;
 
-	const int lastCount = 8;
-	unordered_set<int> valueSet[lastCount];
+	const int limC = 8;
+	unordered_set<int> values[limC];
 
 	int sum = 0;
-	for (int i = 0; i < lastCount; i++)
+
+	for (int i = 0; i < limC; i++)
 	{
 		sum = N + sum * 10;
-		valueSet[i].insert(sum);
+		values[i].insert(sum);
 	}
 
-	for (int i = 1; i < lastCount; i++)
+	for (int i = 0; i < limC; i++)
 	{
 		for (int j = 0; j < i; j++)
 		{
-			for (const auto& jValue : valueSet[j])
+			for (int a : values[j])
 			{
-				for (const auto& value : valueSet[i - j - 1])
+				for (int b : values[i - j -1])
 				{
-					valueSet[i].insert(jValue + value);
-					valueSet[i].insert(jValue - value);
-					valueSet[i].insert(jValue * value);
+					values[i].insert(a + b);
+					values[i].insert(a - b);
+					values[i].insert(a * b);
 
-					if(value != 0)
-						valueSet[i].insert(jValue / value);
+					if (b != 0)
+						values[i].insert(a / b);
 				}
 			}
 		}
 	}
 
-	for (int i = 0; i < lastCount; i++)
+	for (int i = 0; i < limC; i++)
 	{
-		if (valueSet[i].find(number) != valueSet[i].end())
+		if (values[i].find(number) != values[i].end())
 		{
 			answer = i + 1;
 			break;
 		}
 	}
-
 	return answer;
 }
