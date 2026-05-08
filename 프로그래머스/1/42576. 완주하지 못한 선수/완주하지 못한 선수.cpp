@@ -7,32 +7,24 @@ using namespace std;
 string solution(vector<string> participant, vector<string> completion) {
     string answer = "";
     unordered_map<string,int> m;
+    m.reserve(participant.size());
     
-    for(int i = 0;i<participant.size();i++)
+    for(string& str : participant)
     {
-        if(m.find(participant[i]) == m.end())
-        {
-            m[participant[i]] = 1;
-        }
-        else
-        {
-            m[participant[i]] += 1;
-        }
+        m[str]++;
     }
     
-    for(int i = 0; i < completion.size();i++)
+    for(string& str : completion)
     {
-        if(m.find(completion[i]) != m.end())
-        {
-            m[completion[i]] -= 1;
-        }
+        m[str]--;
     }
     
-    for(auto a : m)
+    for(auto& p : m)
     {
-        if(a.second != 0)
+        if(p.second != 0)
         {
-            answer = a.first;
+            answer = p.first;
+            break;
         }
     }
     
