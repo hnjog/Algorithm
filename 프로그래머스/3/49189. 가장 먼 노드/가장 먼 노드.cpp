@@ -1,91 +1,59 @@
-#include <string>
 #include <vector>
-#include<algorithm>
-#include<unordered_map>
-#include<queue>
-#include<limits.h>
+#include <unordered_map>
+#include <queue>
+#include <limits.h>
 
 using namespace std;
-typedef pair<int, int> pii;
+
+struct infos
+{
+	int now;
+	int cost;
+};
 
 int solution(int n, vector<vector<int>> edge) {
-    unordered_map<int, vector<int>> edgeMap;
-    for (const auto& e : edge)
-    {
-        int begin = e[0];
-        int to = e[1];
+	int answer = 0;
+	unordered_map<int, vector<int>> maps;
 
-        if (edgeMap.find(begin) == edgeMap.end())
-        {
-            edgeMap[begin] = vector<int>();
-        }
+	for (auto& ed : edge)
+	{
+		int start = ed[0];
+		int end = ed[1];
+		maps[start].push_back(end);
+		maps[end].push_back(start);
+	}
 
-        edgeMap[begin].push_back(to);
+	vector<int> visited(n + 1, INT_MAX);
+	int bestV = 0;
 
-        if (edgeMap.find(to) == edgeMap.end())
-        {
-            edgeMap[to] = vector<int>();
-        }
+	queue<infos> q;
+	q.push({ 1,0 });
 
-        edgeMap[to].push_back(begin);
-    }
+	while (q.empty() == false)
+	{
+		int now = q.front().now;
+		int cost = q.front().cost;
+		q.pop();
 
-    int answer = 0;
-    const int c_start = 1;
+		if (visited[now] <= cost)
+			continue;
 
-    // 각 노드의 코스트 값
-    // 이거랑 비교하여 더 작은 쪽을 넣어주며
-    // 현재 탐색중인 방식에서 nodeCosts에 기존에 있는 값이랑 비교하여
-    // 더 높은 경우는 바로 종료시키기
-    vector<int> nodeCosts(n, INT_MAX);
-    vector<bool> visited(n, false);
+		visited[now] = cost;
 
-    queue<pii> q;
-    q.push(make_pair(c_start, 0));
+		if (cost > bestV)
+			bestV = cost;
 
-    while (q.empty() == false)
-    {
-        auto& e = q.front();
-        
-        int now = e.first;
-        int nowCost = e.second;
-        
-        q.pop();
+		for (int next : maps[now])
+		{
+			q.push({ next,cost + 1 });
+		}
+	}
 
-        if (visited[now - 1])
-        {
-            continue;
-        }
+	for (int v : visited)
+	{
+		if (v == bestV)
+			answer++;
+	}
 
-        // 저장된 코스트 값보다 현재 코스트가 더 크다
-        if (nodeCosts[now - 1] < nowCost)
-        {
-            continue;
-        }
-
-        nodeCosts[now - 1] = nowCost;
-        visited[now - 1] = true;
-
-        for (int nowE : edgeMap[now])
-        {
-            q.push(make_pair(nowE, nowCost + 1));
-        }
-    }
-
-    int answerValue = nodeCosts[0];
-
-    for (int i = 1; i < n; i++)
-    {
-        if (nodeCosts[i] > answerValue)
-        {
-            answerValue = nodeCosts[i];
-            answer = 1;
-        }
-        else if (nodeCosts[i] == answerValue)
-        {
-            answer++;
-        }
-    }
-
-    return answer;
+	return answer;
 }
