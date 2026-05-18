@@ -1,21 +1,18 @@
-#include <string>
 #include <vector>
 
 using namespace std;
 
 int solution(int n, vector<vector<int>> results) {
+	int answer = 0;
 
-	// 인접 행렬 + 플로이드-워셜
-	// i가 j를 이겼다면 vector<vector<bool>> 에서 [i][j] = true
-	// 특정한 '선수'의 모든 승패 여부의 값이 n - 1인지 확인하기
-	// (+ 간접적인 경로 계산 역시 필요함) 
-	vector<vector<bool>> g(n, vector<bool>(n, false));
+	vector<vector<bool>> winCheck(n, vector<bool>(n, false));
 
-	for (const auto& r : results)
+	for (vector<int>& r : results)
 	{
-		int win = r[0] - 1;
-		int lose = r[1] - 1;
-		g[win][lose] = true;
+		int a = r[0] - 1;
+		int b = r[1] - 1;
+		// a가 b를 이김
+		winCheck[a][b] = true;
 	}
 
 	for (int k = 0; k < n; k++)
@@ -24,30 +21,35 @@ int solution(int n, vector<vector<int>> results) {
 		{
 			for (int j = 0; j < n; j++)
 			{
-				// 반복문을 돌면서
-				// 승패를 덮어씌움
-				if (g[i][k] == true && g[k][j] == true)
+				// i 가 k를 이기고
+				// k 가 j를 이겼다면
+				if (winCheck[i][k] &&
+					winCheck[k][j])
 				{
-					g[i][j] = true;
+					winCheck[i][j] = true;
 				}
 			}
 		}
 	}
 
-	int answer = 0;
-
 	for (int i = 0; i < n; i++)
 	{
-		int count = 0;
+		bool bCheck = true;
 		for (int j = 0; j < n; j++)
 		{
-			if (g[i][j] == true)
-				count++;
-			if (g[j][i] == true)
-				count++;
+			if (i == j)
+				continue;
+
+			// 두 사람간 승패가 명확하지 않음 -> 정답 아님
+			if (winCheck[i][j] == false &&
+				winCheck[j][i] == false)
+			{
+				bCheck = false;
+				break;
+			}
 		}
 
-		if (count == n - 1)
+		if (bCheck)
 			answer++;
 	}
 
