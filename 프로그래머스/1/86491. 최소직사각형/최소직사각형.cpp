@@ -1,29 +1,27 @@
-#include <string>
 #include <vector>
 
 using namespace std;
 
 int solution(vector<vector<int>> sizes) {
-    int answer = 0;
-    
-    int m1 = 0,m2 = 0;
-    
-    for(int i = 0; i < sizes.size(); i++)
+    int bestV = 0;
+    for(int i=0;i<sizes.size();i++)
     {
-        int t1 = sizes[i][0];
-        int t2 = sizes[i][1];
-        if(t1 < t2)
-        {
-            swap(t1,t2);
-        }
-        
-        if(m1 < t1)
-            m1 = t1;
-        if(m2 < t2)
-            m2 = t2;
+        int w = sizes[i][0];
+        int h = sizes[i][1];
+        if(bestV < w)
+            bestV = w;
+        if(bestV < h)
+            bestV = h;
     }
     
-    answer = m1 * m2;
+    int mValue = min(sizes[0][0],sizes[0][1]);
     
-    return answer;
+    for(int i=1; i < sizes.size();i++)
+    {
+        int lessV = min(sizes[i][0],sizes[i][1]);
+        if(mValue < lessV)
+            mValue = lessV;
+    }
+    
+    return bestV * mValue;
 }
