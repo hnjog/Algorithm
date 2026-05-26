@@ -3,32 +3,36 @@
 
 using namespace std;
 
-const int c_range = 5;
-const char c_arr[c_range] = { 'A','E','I','O','U' };
+char als[5] = { 'A', 'E', 'I', 'O', 'U' };
 
-int recur(const string& targetWord, string nowWord, int&& count)
+bool FindStr(const string& word, string& now, int& answer)
 {
-    if (targetWord == nowWord)
+    if (now == word)
     {
-        return count;
+        return true;
     }
 
-    if (nowWord.size() >= c_range)
+    if (now.size() > 5)
+        return false;
+
+    answer++;
+
+    for (char c : als)
     {
-        return 0;
+        now.push_back(c);
+
+        if (FindStr(word, now, answer) == true)
+            return true;
+
+        now.pop_back();
     }
 
-    for (int i = 0; i < c_range; i++)
-    {
-        count++;
-        int ret = recur(targetWord, nowWord + c_arr[i], move(count));
-        if (ret != 0)
-            return ret;
-    }
-
-    return 0;
+    return false;
 }
 
 int solution(string word) {
-    return recur(word, "", 0);
+    int answer = 0;
+    string now = "";
+    FindStr(word, now, answer);
+    return answer;
 }
