@@ -2,24 +2,23 @@
 
 using namespace std;
 
-void dfs(const vector<int>& numbers, int target, int idx, int nowSum, int& count)
+int Recur(const vector<int>& numbers, int target, int idx, int nowValue)
 {
     int ns = numbers.size();
-
-    if (idx >= ns)
+    if (ns == idx)
     {
-        if (nowSum == target)
-            count++;
+        if (target == nowValue)
+            return 1;
 
-        return;
+        return 0;
     }
 
-    dfs(numbers, target, idx + 1, nowSum + numbers[idx], count);
-    dfs(numbers, target, idx + 1, nowSum - numbers[idx], count);
+    int ret = 0;
+    ret += Recur(numbers, target, idx + 1, nowValue + numbers[idx]);
+    ret += Recur(numbers, target, idx + 1, nowValue - numbers[idx]);
+    return ret;
 }
 
 int solution(vector<int> numbers, int target) {
-    int answer = 0;
-    dfs(numbers, target, 0, 0, answer);
-    return answer;
+    return Recur(numbers,target,0,0);
 }
