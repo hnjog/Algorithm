@@ -1,62 +1,51 @@
 #include<vector>
 #include<queue>
-#include<limits.h>
 
 using namespace std;
 
-const int dirY[4] = { 0,-1,0,1 };
-const int dirX[4] = { -1,0,1,0 };
+const int dirY[4] = { -1,0,1,0 };
+const int dirX[4] = { 0,1,0,-1 };
 
-struct pos
+struct infos
 {
 	int y, x, cost;
 };
 
-int solution(vector<vector<int>> maps)
+int solution(vector<vector<int> > maps)
 {
-	int answer = -1;
+	int n = maps.size();
+	int m = maps[0].size();
 
-	int h = maps.size();
-	int w = maps[0].size();
-
-	vector<vector<int>> visited(h, vector<int>(w, INT_MAX));
-
-	queue<pos> q;
+	queue<infos> q;
 	q.push({ 0,0,1 });
 
 	while (q.empty() == false)
 	{
 		int nowy = q.front().y;
 		int nowx = q.front().x;
-		int nowc = q.front().cost;
+		int nowcost = q.front().cost;
 		q.pop();
 
-		if (nowy == h - 1 &&
-			nowx == w - 1)
+		if (nowy < 0 || nowy >= n ||
+			nowx < 0 || nowx >= m)
+			continue;
+
+		if (maps[nowy][nowx] <= 0)
+			continue;
+
+		if (nowy == n - 1 &&
+			nowx == m - 1)
 		{
-			answer = nowc;
-			break;
+			return nowcost;
 		}
 
-		if (nowy < 0 || nowy >= h ||
-			nowx < 0 || nowx >= w)
-			continue;
-
-		if (maps[nowy][nowx] == 0)
-			continue;
-
-		if (nowc >= visited[nowy][nowx])
-			continue;
-
-		visited[nowy][nowx] = nowc;
+		maps[nowy][nowx] = 0;
 
 		for (int i = 0; i < 4; i++)
 		{
-			int ny = nowy + dirY[i];
-			int nx = nowx + dirX[i];
-			q.push({ ny,nx,nowc + 1 });
+			q.push({ nowy + dirY[i],nowx + dirX[i],nowcost + 1 });
 		}
 	}
 
-	return answer;
+	return -1;
 }
