@@ -1,61 +1,51 @@
 #include <string>
 #include <vector>
-#include <unordered_map>
 #include <map>
 #include <algorithm>
 
 using namespace std;
 
-typedef pair<string, string> pss;
-
-bool dfs(int tSize, unordered_map<string, vector<string>>& um, map<pss,int>& pm, map<pss, int>& visit, const string& start, vector<string>& answer)
+bool Recur(map<string, map<string, int>>& maps, string& now, vector<string>& route,int n)
 {
-	answer.push_back(start);
+	route.push_back(now);
 
-	if (tSize + 1 == answer.size())
+	if (route.size() == n)
 	{
 		return true;
 	}
 
-	for (string& str : um[start])
+	for (auto& p : maps[now])
 	{
-		if (pm.find({ start,str }) == pm.end())
-			continue;
-
-		if (visit[{start, str}] >= pm[{start, str}])
-			continue;
-
-		visit[{start, str}]++;
-
-		if (dfs(tSize, um, pm,visit, str, answer) == true)
-			return true;
-
-		visit[{start, str}]--;
+		if (p.second > 0)
+		{
+			p.second--;
+			string next = p.first;
+			if (Recur(maps, next, route, n))
+				return true;
+			p.second++;
+		}
 	}
-	
-	answer.pop_back();
+
+	route.pop_back();
+
 	return false;
 }
 
 vector<string> solution(vector<vector<string>> tickets) {
 	vector<string> answer;
-	unordered_map<string, vector<string>> um;
-	map<pss, int> pm,visit;
 
-	for (const auto& ticket : tickets)
+	map<string, map<string,int>> maps;
+
+	for (auto& ticket : tickets)
 	{
-		const string& start = ticket[0];
-		const string& target = ticket[1];
+		string& start = ticket[0];
+		string& to = ticket[1];
 
-		um[start].push_back(target);
-		pm[{start, target}]++;
+		maps[start][to]++;
 	}
 
-	for (auto& targets : um)
-	{
-		sort(targets.second.begin(), targets.second.end(), [](const string& a, const string& b) { return a < b; });
-	}
-	
-	dfs(tickets.size(), um, pm, visit, "ICN", answer);
+	string start = "ICN";
+	Recur(maps, start, answer,tickets.size() + 1);
+
 	return answer;
 }
