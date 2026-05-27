@@ -1,34 +1,38 @@
-#include <string>
 #include <vector>
+#include <queue>
+#include <unordered_map>
 #include <unordered_set>
 
 using namespace std;
 
-int FindParent(vector<int>& pv, int x)
+void Bfs(unordered_map<int, vector<int>>& maps, vector<int>& parents,int start)
 {
-    if (pv[x] == x)
-        return x;
+    if (parents[start] != start)
+        return;
 
-    return pv[x] = FindParent(pv, pv[x]);
-}
+    queue<int> q;
+    q.push(start);
 
-bool Union(vector<int>& pv,int a,int b)
-{
-    a = FindParent(pv, a);
-    b = FindParent(pv, b);
+    while (q.empty() == false)
+    {
+        int now = q.front();
+        q.pop();
 
-    if (a == b)
-        return false;
+        if (now != start &&
+            parents[now] == start)
+            continue;
 
-    pv[a] = b;
+        parents[now] = start;
 
-    return true;
+        for (int next : maps[now])
+        {
+            q.push(next);
+        }
+    }
 }
 
 int solution(int n, vector<vector<int>> computers) {
-    vector<int> pv(n);
-    for (int i = 0; i < n; i++)
-        pv[i] = i;
+    unordered_map<int, vector<int>> maps;
 
     for (int i = 0; i < n; i++)
     {
@@ -38,17 +42,29 @@ int solution(int n, vector<vector<int>> computers) {
                 continue;
 
             if (computers[i][j] == 1)
-                Union(pv, i, j);
+            {
+                maps[i].push_back(j);
+            }
         }
     }
 
-    unordered_set<int> us;
-    us.reserve(n);
-
-    for (int p : pv)
+    vector<int> parent(n, 0);
+    for (int i = 0; i < n; i++)
     {
-        us.insert(FindParent(pv,p));
+        parent[i] = i;
     }
 
-    return us.size();
+    for (int i = 0; i < n; i++)
+    {
+        Bfs(maps, parent, i);
+    }
+
+    unordered_set<int> counts;
+    
+    for (int i = 0; i < n; i++)
+    {
+        counts.insert(parent[i]);
+    }
+
+    return counts.size();
 }
