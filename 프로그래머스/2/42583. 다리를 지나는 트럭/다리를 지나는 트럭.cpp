@@ -1,47 +1,41 @@
-#include <string>
 #include <vector>
 #include <queue>
 
 using namespace std;
 
+typedef pair<int, int> pii;
+
 int solution(int bridge_length, int weight, vector<int> truck_weights) {
-    int answer = 0;
-    int weightSum = 0;
-    queue<int> waitingQ;
-    queue<pair<int, int>> passingQ; // 무게 , 들어간 시점
+	int time = 1;
+	queue<pii> q;
+	int sum = 0;
+	int tidx = 0;
 
-    for (int i = 0; i < truck_weights.size(); i++)
-    {
-        waitingQ.push(truck_weights[i]);
-    }
-
-    while (waitingQ.empty() == false || passingQ.empty() == false)
-    {
-        answer++;
-
-        if (passingQ.empty() == false)
+	while (q.empty() == false ||
+		tidx < truck_weights.size())
+	{
+		while (q.empty() == false &&
+            q.front().second <= time)
         {
-            pair<int, int> f = passingQ.front();
-
-            if (f.second + bridge_length <= answer)
-            {
-                passingQ.pop();
-                weightSum -= f.first;
-            }
+            sum -= q.front().first;
+            q.pop();
         }
 
-        if (waitingQ.empty() == false)
-        {
-            int wei = waitingQ.front();
+		if (tidx < truck_weights.size() &&
+			truck_weights[tidx] + sum <= weight &&
+			q.size() < bridge_length)
+		{
+			q.push({ truck_weights[tidx], time + bridge_length });
+			sum += truck_weights[tidx];
+			tidx++;
+			time++;
+			continue;
+		}
 
-            if (wei + weightSum <= weight)
-            {
-                waitingQ.pop();
-                passingQ.push(make_pair(wei, answer));
-                weightSum += wei;
-            }
-        }
-    }
+		time = q.front().second;
+		sum -= q.front().first;
+		q.pop();
+	}
 
-    return answer;
+	return time;
 }
