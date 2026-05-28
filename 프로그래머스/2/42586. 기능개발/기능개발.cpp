@@ -1,31 +1,35 @@
+#include <queue>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
 vector<int> solution(vector<int> progresses, vector<int> speeds) {
     vector<int> answer;
+    queue<pair<int,int>> workq;
     
-    int day = 1;
-    int pIdx = 0;
-    
-    while(pIdx < progresses.size())
+    for(int i=0;i<progresses.size();i++)
     {
-        int result = 0;
-        while(pIdx < progresses.size() &&
-            progresses[pIdx] + speeds[pIdx] * day >= 100)
-        {
-            result++;
-            pIdx++;
-        }
-        
-        if(result != 0)
-        {
-            answer.push_back(result);
-        }
-        
-        day++;
+        workq.push({100 - progresses[i],speeds[i]});
     }
     
+    int day = 0;
+    while(workq.empty() == false)
+    {
+        day++;
+        if(workq.front().first <= workq.front().second * day)
+        {
+            int d = 0;
+            while(workq.front().first <= workq.front().second * day &&
+                 workq.empty() == false)
+            {
+                d++;
+                workq.pop();
+            }
+            
+            answer.push_back(d);
+        }
+    }
     
     return answer;
 }
