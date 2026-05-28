@@ -1,35 +1,40 @@
-#include <string>
+#include <stack>
 #include <vector>
 
 using namespace std;
 
-vector<int> solution(vector<int> prices) {
-    vector<int> answer;
-    vector<pair<int,int>> stacks;
-    
-    int pSize = prices.size();
-    stacks.reserve(pSize);
+typedef pair<int, int> pii;
 
-    for (int i = 0; i < pSize; i++)
+vector<int> solution(vector<int> prices) {
+    int n = prices.size();
+    vector<int> answer(n,0);
+
+    stack<pii> st;
+    for (int i = 0; i < n; i++)
     {
-        answer.push_back(0);
+        if (st.empty() ||
+            prices[i] >= st.top().first)
+        {
+            st.push({ prices[i],i });
+            continue;
+        }
+        else
+        {
+            while (st.empty() == false &&
+                prices[i] < st.top().first)
+            {
+                answer[st.top().second] = i - st.top().second;
+                st.pop();
+            }
+
+            st.push({ prices[i],i });
+        }
     }
 
-    for (int i = 0; i < pSize;i++)
+    while (st.empty() == false)
     {
-        for (int j = 0; j < stacks.size(); j++)
-        {
-            pair<int, int>& p = stacks[j];
-            answer[p.second] += 1;
-        }
-
-        while (stacks.empty() == false &&
-            stacks.back().first > prices[i])
-        {
-            stacks.pop_back();
-        }
-
-        stacks.push_back(make_pair(prices[i], i));
+        answer[st.top().second] = n - 1 - st.top().second;
+        st.pop();
     }
 
     return answer;
