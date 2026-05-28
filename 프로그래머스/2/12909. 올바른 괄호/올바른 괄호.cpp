@@ -1,41 +1,28 @@
-#include<string>
-#include <iostream>
-#include <vector>
+#include <string>
+#include <stack>
 
 using namespace std;
 
 bool solution(string s)
 {
-    bool answer = true;
-    int sSize = s.size();
-    
-    vector<char> cArr;
-    cArr.reserve(sSize);
-    bool bStopped = false;
-    
-    for(int i = 0; i < sSize;i++)
+    stack<char> st;
+    for(char c : s)
     {
-        if(s[i] == '(')
+        if(st.empty() ||
+          c == '(')
         {
-            cArr.push_back(s[i]);
+            st.push(c);
+            continue;
         }
-        else
+        
+        if(c == ')')
         {
-            // 괄호 벡터가 비어있는데 닫는 것부터 나왔다
-            if(cArr.size() == 0)
-            {
-                bStopped = true;
-                break;
-            }
+            if(st.top() != '(')
+                return false;
             
-            cArr.pop_back();
+            st.pop();
         }
-    }
-    
-    if(bStopped || cArr.size() != 0)
-    {
-        answer = false;
     }
 
-    return answer;
+    return st.empty();
 }
