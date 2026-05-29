@@ -1,38 +1,38 @@
-#include <string>
 #include <vector>
-#include<algorithm>
+#include <limits.h>
 
 using namespace std;
 
-long long solution(int n, vector<int> times) {
-    sort(times.begin(), times.end());
-    long long low = 1;
-    long long high = (long long)times.back() * n;
-    long long answer = high;
+bool IsCanProcess(long long time, int n, vector<int>& times)
+{
+    long long remain = n;
 
-    while (low <= high) 
+    for (int t : times)
     {
-        long long mid = (low + high) / 2;
-        long long count = 0;
+        remain -= (time / (long)t);
+        if (remain <= 0)
+            break;
+    }
 
-        // mid 시간 동안 모든 심사관이 처리할 수 있는 인원의 총합 계산
-        for (int time : times) 
-        {
-            count += mid / time;
-        }
+    return remain <= 0;
+}
 
-        // 처리 가능한 인원 수가 n보다 작으면, 더 많은 시간이 필요함
-        if (count < n) 
+long long solution(int n, vector<int> times) {
+    long long start = 1, end = LONG_MAX / 2;
+
+    while (start < end)
+    {
+        long long mid = (start + end) / 2;
+
+        if (IsCanProcess(mid, n, times))
         {
-            low = mid + 1;
+            end = mid;
         }
-        // 처리 가능한 인원 수가 n보다 크거나 같으면, 더 적은 시간도 가능할 수 있음
-        else 
-        { 
-            answer = min(answer, mid);
-            high = mid - 1;
+        else
+        {
+            start = mid + 1;
         }
     }
 
-    return answer;
+    return end;
 }
