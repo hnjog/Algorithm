@@ -1,80 +1,85 @@
 #include <string>
 #include <vector>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
+vector<string> DivideStr(const string& str)
+{
+    vector<string> ret(3,"");
+
+    int idx = 0;
+    int n = str.size();
+    for (; idx < n; idx++)
+    {
+        char c = str[idx];
+        if (isdigit(c))
+        {
+            break;
+        }
+
+        ret[0].push_back(c);
+    }
+
+    for (; idx < n; idx++)
+    {
+        char c = str[idx];
+        if (isdigit(c) == false)
+        {
+            break;
+        }
+
+        ret[1].push_back(c);
+    }
+
+    for (; idx < n; idx++)
+    {
+        ret[2].push_back(str[idx]);
+    }
+
+    return ret;
+}
+
 vector<string> solution(vector<string> files) {
-	stable_sort(files.begin(), files.end(), [](const string& a, const string& b)
-		{
-			string headA = "", numberA = "", headB = "", numberB = "";
+    vector<string> answer;
+    answer.reserve(files.size());
+    vector<vector<string>> fileDivide;
+    fileDivide.reserve(files.size());
+    for (const string& str : files)
+    {
+        fileDivide.emplace_back(DivideStr(str));
+    }
 
-			bool isHeadCheck = true;
-			for (const char c : a)
-			{
-				if (c >= '0' && c <= '9')
-				{
-					isHeadCheck = false;
-					numberA += c;
-					if (numberA.size() >= 5)
-						break;
-				}
-				else if (isHeadCheck == true)
-				{
-					headA += toupper(c);
-				}
-				else
-				{
-					break;
-				}
-			}
+    stable_sort(fileDivide.begin(), fileDivide.end(), []
+    (auto& a, auto& b)
+        {
+            string ah = a[0];
+            for (char& c : ah)
+            {
+                c = toupper(c);
+            }
 
-			isHeadCheck = true;
-			for (const char c : b)
-			{
-				if (c >= '0' && c <= '9')
-				{
-					isHeadCheck = false;
-					numberB += c;
-					if (numberB.size() >= 5)
-						break;
-				}
-				else if (isHeadCheck == true)
-				{
-					headB += toupper(c);
-				}
-				else
-				{
-					break;
-				}
-			}
+            string bh = b[0];
+            for (char& c : bh)
+            {
+                c = toupper(c);
+            }
 
-			if (headA != headB)
-			{
-				int shortLen = min(headA.size(), headB.size());
+            if (ah != bh)
+            {
+                return ah < bh;
+            }
 
-				for (int i = 0; i < shortLen; i++)
-				{
-					if (headA[i] == headB[i])
-						continue;
+            int av = stoi(a[1]);
+            int bv = stoi(b[1]);
 
-					return headA[i] < headB[i];
-				}
+            return av < bv;
+        });
 
-				return headA.size() < headB.size();
-			}
+    for (auto& str : fileDivide)
+    {
+        answer.emplace_back(str[0] + str[1] + str[2]);
+    }
 
-			int nA = stoi(numberA);
-			int nB = stoi(numberB);
-
-			if (nA != nB)
-			{
-				return nA < nB;
-			}
-
-			return false;
-		});
-
-
-    return files;
+    return answer;
 }
