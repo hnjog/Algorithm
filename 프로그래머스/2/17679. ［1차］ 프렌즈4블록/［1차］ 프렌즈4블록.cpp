@@ -1,101 +1,110 @@
 #include <string>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
-int check(vector<string>& board)
+bool Check2x2(int nowY, int nowX, vector<string>& board)
 {
-	int result = 0;
-	int bSize1 = board.size();
-	int bSize2 = board[0].size();
+	int m = board.size();
+	int n = board[0].size();
 
-	// 이게 true로 되어 있는 녀석들 나중에 싹 'x'(소문자)로 바꿔주기
-	vector<vector<bool>> checker(bSize1,vector<bool>(bSize2,false));
+	if (nowY + 1 >= m ||
+		nowX + 1 >= n)
+		return false;
 
-	for (int y = 0; y < bSize1 - 1; y++)
+	char start = board[nowY][nowX];
+
+	if (start == ' ')
+		return false;
+
+	for (int i = nowY; i < nowY + 2; i++)
 	{
-		for (int x = 0; x < bSize2 - 1; x++)
+		for (int j = nowX; j < nowX + 2; j++)
 		{
-			// 2x2
-			char now = board[y][x];
-			if (now == 'x')
-				continue;
-
-			if (now == board[y][x + 1] &&
-				now == board[y + 1][x] &&
-				now == board[y + 1][x + 1])
-			{
-				checker[y][x] = true;
-				checker[y][x + 1] = true;
-				checker[y + 1][x] = true;
-				checker[y + 1][x + 1] = true;
-			}
+			if (board[i][j] != start)
+				return false;
 		}
 	}
 
-	for (int i = 0; i < bSize1; i++)
-	{
-		for (int j = 0; j < bSize2; j++)
-		{
-			if (checker[i][j])
-			{
-				board[i][j] = 'x';
-				result++;
-			}
-		}
-	}
-
-	int c = 0;
-
-	return result;
+	return true;
 }
 
-void sortingFunc(vector<string>& board)
+int TurnDestroy(vector<string>& board)
 {
-	int bSize1 = board.size();
-	int bSize2 = board[0].size();
+	int m = board.size();
+	int n = board[0].size();
+	vector<vector<bool>> checkBoard(m, vector<bool>(n, false));
 
-	for (int y = bSize1 - 1; y >= 1; y--)
+	for (int i = 0; i < m; i++)
 	{
-		for (int x = 0; x < bSize2; x++)
+		for (int j = 0; j < n; j++)
 		{
-			if (board[y][x] == 'x')
+			if (Check2x2(i, j, board))
 			{
-				int idx = 0;
-				bool isFind = false;
-				for (int i = y - 1; i >= 0; i--)
-				{
-					if (board[i][x] != 'x')
-					{
-						idx = i;
-						isFind = true;
-						break;
-					}
-				}
-				if (isFind)
-					swap(board[y][x], board[idx][x]);
+				checkBoard[i][j] = true;
+				checkBoard[i + 1][j] = true;
+				checkBoard[i][j + 1] = true;
+				checkBoard[i + 1][j + 1] = true;
 			}
+		}
+	}
+
+	int count = 0;
+
+	for (int i = 0; i < m; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (checkBoard[i][j])
+			{
+				count++;
+				board[i][j] = ' ';
+			}
+		}
+	}
+
+	return count;
+}
+
+void TurnSwap(vector<string>& board)
+{
+	int m = board.size();
+	int n = board[0].size();
+
+	for (int i = 0; i < n; i++)
+	{
+		queue<char> st;
+		for (int j = 0; j < m; j++)
+		{
+			if (board[j][i] != ' ')
+			{
+				st.push(board[j][i]);
+				board[j][i] = ' ';
+			}
+		}
+
+		while (st.empty() == false)
+		{
+			board[m - st.size()][i] = st.front();
+			st.pop();
 		}
 	}
 }
 
-int solution(int m, int n, vector<string> board) {
+int solution(int m, int n, vector<string> board)
+{
 	int answer = 0;
-	
+
 	while (true)
 	{
-		auto temp = board;
-		int result = check(board);
+		int val = TurnDestroy(board);
 
-		if (result == 0)
-		{
+		if (val == 0)
 			break;
-		}
-		else
-		{
-			answer += result;
-			sortingFunc(board);
-		}
+
+		answer += val;
+		TurnSwap(board);
 	}
 
 	return answer;
