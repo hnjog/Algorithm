@@ -6,6 +6,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Array
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/hnjog/Algorithm/tree/master/0001-two-sum) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0485-max-consecutive-ones](https://github.com/hnjog/Algorithm/tree/master/0485-max-consecutive-ones) |
@@ -22,6 +23,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Hash Table
 |  |
 | ------- |
+| [0001-two-sum](https://github.com/hnjog/Algorithm/tree/master/0001-two-sum) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
