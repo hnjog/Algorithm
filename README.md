@@ -7,6 +7,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/hnjog/Algorithm/tree/master/0001-two-sum) |
+| [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
@@ -79,4 +80,12 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
+## Binary Search
+|  |
+| ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
+## Divide and Conquer
+|  |
+| ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 <!---LeetCode Topics End-->
