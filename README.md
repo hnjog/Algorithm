@@ -16,6 +16,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0636-exclusive-time-of-functions](https://github.com/hnjog/Algorithm/tree/master/0636-exclusive-time-of-functions) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [0739-daily-temperatures](https://github.com/hnjog/Algorithm/tree/master/0739-daily-temperatures) |
+| [1046-last-stone-weight](https://github.com/hnjog/Algorithm/tree/master/1046-last-stone-weight) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 | [1441-build-an-array-with-stack-operations](https://github.com/hnjog/Algorithm/tree/master/1441-build-an-array-with-stack-operations) |
 | [1470-shuffle-the-array](https://github.com/hnjog/Algorithm/tree/master/1470-shuffle-the-array) |
@@ -107,4 +108,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [1046-last-stone-weight](https://github.com/hnjog/Algorithm/tree/master/1046-last-stone-weight) |
 <!---LeetCode Topics End-->
