@@ -13,11 +13,8 @@ public:
 			int b = pq.top();
 			pq.pop();
 
-			if (a == b)
-				continue;
-
-			int r = a - b;
-			pq.push(r);
+			if (a != b)
+				pq.push(a-b);
 		}
 
 		if (pq.empty())
