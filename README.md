@@ -11,6 +11,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0485-max-consecutive-ones](https://github.com/hnjog/Algorithm/tree/master/0485-max-consecutive-ones) |
 | [0636-exclusive-time-of-functions](https://github.com/hnjog/Algorithm/tree/master/0636-exclusive-time-of-functions) |
@@ -111,5 +112,6 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Heap (Priority Queue)
 |  |
 | ------- |
+| [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [1046-last-stone-weight](https://github.com/hnjog/Algorithm/tree/master/1046-last-stone-weight) |
 <!---LeetCode Topics End-->
