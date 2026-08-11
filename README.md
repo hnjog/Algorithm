@@ -88,6 +88,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
+| [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
 ## Trie
 |  |
