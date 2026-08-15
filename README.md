@@ -90,6 +90,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
+| [0796-rotate-string](https://github.com/hnjog/Algorithm/tree/master/0796-rotate-string) |
 | [0831-masking-personal-information](https://github.com/hnjog/Algorithm/tree/master/0831-masking-personal-information) |
 ## Trie
 |  |
@@ -119,4 +120,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [1046-last-stone-weight](https://github.com/hnjog/Algorithm/tree/master/1046-last-stone-weight) |
 | [1354-construct-target-array-with-multiple-sums](https://github.com/hnjog/Algorithm/tree/master/1354-construct-target-array-with-multiple-sums) |
+## String Matching
+|  |
+| ------- |
+| [0796-rotate-string](https://github.com/hnjog/Algorithm/tree/master/0796-rotate-string) |
 <!---LeetCode Topics End-->
