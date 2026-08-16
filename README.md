@@ -90,6 +90,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
+| [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/hnjog/Algorithm/tree/master/0796-rotate-string) |
 | [0831-masking-personal-information](https://github.com/hnjog/Algorithm/tree/master/0831-masking-personal-information) |
 ## Trie
@@ -123,5 +124,18 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## String Matching
 |  |
 | ------- |
+| [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/hnjog/Algorithm/tree/master/0796-rotate-string) |
+## Z Algorithm
+|  |
+| ------- |
+| [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
+## Knuth–Morris–Pratt Algorithm
+|  |
+| ------- |
+| [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
+## Boyer–Moore String-Search Algorithm
+|  |
+| ------- |
+| [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 <!---LeetCode Topics End-->
