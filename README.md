@@ -25,6 +25,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1470-shuffle-the-array](https://github.com/hnjog/Algorithm/tree/master/1470-shuffle-the-array) |
 | [1475-final-prices-with-a-special-discount-in-a-shop](https://github.com/hnjog/Algorithm/tree/master/1475-final-prices-with-a-special-discount-in-a-shop) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/hnjog/Algorithm/tree/master/1700-number-of-students-unable-to-eat-lunch) |
+| [1732-find-the-highest-altitude](https://github.com/hnjog/Algorithm/tree/master/1732-find-the-highest-altitude) |
 | [1929-concatenation-of-array](https://github.com/hnjog/Algorithm/tree/master/1929-concatenation-of-array) |
 | [2073-time-needed-to-buy-tickets](https://github.com/hnjog/Algorithm/tree/master/2073-time-needed-to-buy-tickets) |
 ## Simulation
@@ -146,4 +147,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
+## Prefix Sum
+|  |
+| ------- |
+| [1732-find-the-highest-altitude](https://github.com/hnjog/Algorithm/tree/master/1732-find-the-highest-altitude) |
 <!---LeetCode Topics End-->
