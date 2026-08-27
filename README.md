@@ -29,6 +29,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1664-ways-to-make-a-fair-array](https://github.com/hnjog/Algorithm/tree/master/1664-ways-to-make-a-fair-array) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/hnjog/Algorithm/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1732-find-the-highest-altitude](https://github.com/hnjog/Algorithm/tree/master/1732-find-the-highest-altitude) |
+| [1887-reduction-operations-to-make-the-array-elements-equal](https://github.com/hnjog/Algorithm/tree/master/1887-reduction-operations-to-make-the-array-elements-equal) |
 | [1929-concatenation-of-array](https://github.com/hnjog/Algorithm/tree/master/1929-concatenation-of-array) |
 | [2073-time-needed-to-buy-tickets](https://github.com/hnjog/Algorithm/tree/master/2073-time-needed-to-buy-tickets) |
 ## Simulation
@@ -58,6 +59,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
+| [1887-reduction-operations-to-make-the-array-elements-equal](https://github.com/hnjog/Algorithm/tree/master/1887-reduction-operations-to-make-the-array-elements-equal) |
 ## Counting Sort
 |  |
 | ------- |
