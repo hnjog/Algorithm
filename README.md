@@ -10,6 +10,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0041-first-missing-positive](https://github.com/hnjog/Algorithm/tree/master/0041-first-missing-positive) |
+| [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
@@ -56,6 +57,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Sorting
 |  |
 | ------- |
+| [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -160,4 +162,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [1590-make-sum-divisible-by-p](https://github.com/hnjog/Algorithm/tree/master/1590-make-sum-divisible-by-p) |
 | [1664-ways-to-make-a-fair-array](https://github.com/hnjog/Algorithm/tree/master/1664-ways-to-make-a-fair-array) |
 | [1732-find-the-highest-altitude](https://github.com/hnjog/Algorithm/tree/master/1732-find-the-highest-altitude) |
+## Quicksort
+|  |
+| ------- |
+| [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 <!---LeetCode Topics End-->
