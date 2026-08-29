@@ -19,6 +19,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0636-exclusive-time-of-functions](https://github.com/hnjog/Algorithm/tree/master/0636-exclusive-time-of-functions) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [0739-daily-temperatures](https://github.com/hnjog/Algorithm/tree/master/0739-daily-temperatures) |
+| [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
 | [1046-last-stone-weight](https://github.com/hnjog/Algorithm/tree/master/1046-last-stone-weight) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1354-construct-target-array-with-multiple-sums](https://github.com/hnjog/Algorithm/tree/master/1354-construct-target-array-with-multiple-sums) |
@@ -119,6 +120,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
+| [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -166,4 +168,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
+## Ternary Search
+|  |
+| ------- |
+| [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
 <!---LeetCode Topics End-->
