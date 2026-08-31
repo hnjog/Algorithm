@@ -85,6 +85,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
 | [0009-palindrome-number](https://github.com/hnjog/Algorithm/tree/master/0009-palindrome-number) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 ## Monotonic Stack
 |  |
 | ------- |
@@ -121,6 +122,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
+| [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0704-binary-search](https://github.com/hnjog/Algorithm/tree/master/0704-binary-search) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
 ## Divide and Conquer
@@ -174,4 +176,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
+## Two Pointers
+|  |
+| ------- |
+| [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 <!---LeetCode Topics End-->
