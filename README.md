@@ -9,6 +9,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0001-two-sum](https://github.com/hnjog/Algorithm/tree/master/0001-two-sum) |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
+| [0033-search-in-rotated-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0041-first-missing-positive](https://github.com/hnjog/Algorithm/tree/master/0041-first-missing-positive) |
 | [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
@@ -122,6 +123,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
+| [0033-search-in-rotated-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0704-binary-search](https://github.com/hnjog/Algorithm/tree/master/0704-binary-search) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
