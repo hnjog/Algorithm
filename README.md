@@ -77,6 +77,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Stack
 |  |
 | ------- |
+| [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
@@ -119,6 +120,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- |
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
+| [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
@@ -198,4 +200,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
+## Bracket Sequences
+|  |
+| ------- |
+| [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
 <!---LeetCode Topics End-->
