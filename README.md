@@ -53,6 +53,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0041-first-missing-positive](https://github.com/hnjog/Algorithm/tree/master/0041-first-missing-positive) |
 | [0138-copy-list-with-random-pointer](https://github.com/hnjog/Algorithm/tree/master/0138-copy-list-with-random-pointer) |
+| [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -74,6 +75,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Counting Sort
 |  |
 | ------- |
+| [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 ## Stack
 |  |
@@ -122,6 +124,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
+| [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
@@ -149,6 +152,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
+| [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/hnjog/Algorithm/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [2073-time-needed-to-buy-tickets](https://github.com/hnjog/Algorithm/tree/master/2073-time-needed-to-buy-tickets) |
 ## Design
