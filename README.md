@@ -108,6 +108,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
+| [0021-merge-two-sorted-lists](https://github.com/hnjog/Algorithm/tree/master/0021-merge-two-sorted-lists) |
 | [0083-remove-duplicates-from-sorted-list](https://github.com/hnjog/Algorithm/tree/master/0083-remove-duplicates-from-sorted-list) |
 | [0138-copy-list-with-random-pointer](https://github.com/hnjog/Algorithm/tree/master/0138-copy-list-with-random-pointer) |
 | [0147-insertion-sort-list](https://github.com/hnjog/Algorithm/tree/master/0147-insertion-sort-list) |
@@ -117,6 +118,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
+| [0021-merge-two-sorted-lists](https://github.com/hnjog/Algorithm/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/hnjog/Algorithm/tree/master/0206-reverse-linked-list) |
 ## String
 |  |
