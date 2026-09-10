@@ -16,6 +16,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
+| [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0485-max-consecutive-ones](https://github.com/hnjog/Algorithm/tree/master/0485-max-consecutive-ones) |
@@ -203,6 +204,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/hnjog/Algorithm/tree/master/0027-remove-element) |
+| [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 ## Quickselect
 |  |
