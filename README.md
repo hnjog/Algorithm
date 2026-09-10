@@ -128,6 +128,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
+| [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
@@ -205,6 +206,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/hnjog/Algorithm/tree/master/0027-remove-element) |
+| [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 ## Quickselect
