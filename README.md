@@ -14,6 +14,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0041-first-missing-positive](https://github.com/hnjog/Algorithm/tree/master/0041-first-missing-positive) |
 | [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 | [0084-largest-rectangle-in-histogram](https://github.com/hnjog/Algorithm/tree/master/0084-largest-rectangle-in-histogram) |
+| [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
@@ -68,6 +69,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
+| [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0147-insertion-sort-list](https://github.com/hnjog/Algorithm/tree/master/0147-insertion-sort-list) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -206,6 +208,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/hnjog/Algorithm/tree/master/0027-remove-element) |
+| [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
