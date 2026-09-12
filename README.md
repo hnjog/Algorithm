@@ -130,6 +130,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0014-longest-common-prefix](https://github.com/hnjog/Algorithm/tree/master/0014-longest-common-prefix) |
 | [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
@@ -176,19 +177,23 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## String Matching
 |  |
 | ------- |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 | [0796-rotate-string](https://github.com/hnjog/Algorithm/tree/master/0796-rotate-string) |
 ## Z Algorithm
 |  |
 | ------- |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 ## Knuth–Morris–Pratt Algorithm
 |  |
 | ------- |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 ## Boyer–Moore String-Search Algorithm
 |  |
 | ------- |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
 ## Prefix Sum
 |  |
@@ -208,6 +213,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/hnjog/Algorithm/tree/master/0027-remove-element) |
+| [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
