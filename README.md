@@ -100,6 +100,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
 | [0009-palindrome-number](https://github.com/hnjog/Algorithm/tree/master/0009-palindrome-number) |
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
+| [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
@@ -150,6 +151,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 | [0033-search-in-rotated-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0035-search-insert-position](https://github.com/hnjog/Algorithm/tree/master/0035-search-insert-position) |
+| [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0704-binary-search](https://github.com/hnjog/Algorithm/tree/master/0704-binary-search) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
@@ -241,4 +243,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0733-flood-fill](https://github.com/hnjog/Algorithm/tree/master/0733-flood-fill) |
+## Newton's Method
+|  |
+| ------- |
+| [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
 <!---LeetCode Topics End-->
