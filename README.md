@@ -46,6 +46,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Simulation
 |  |
 | ------- |
+| [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [1441-build-an-array-with-stack-operations](https://github.com/hnjog/Algorithm/tree/master/1441-build-an-array-with-stack-operations) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/hnjog/Algorithm/tree/master/1700-number-of-students-unable-to-eat-lunch) |
 | [1929-concatenation-of-array](https://github.com/hnjog/Algorithm/tree/master/1929-concatenation-of-array) |
@@ -65,6 +66,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Bit Manipulation
 |  |
 | ------- |
+| [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
 |  |
@@ -100,6 +102,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
 | [0009-palindrome-number](https://github.com/hnjog/Algorithm/tree/master/0009-palindrome-number) |
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
+| [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
@@ -134,6 +137,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0020-valid-parentheses](https://github.com/hnjog/Algorithm/tree/master/0020-valid-parentheses) |
 | [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0058-length-of-last-word](https://github.com/hnjog/Algorithm/tree/master/0058-length-of-last-word) |
+| [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
