@@ -104,6 +104,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0013-roman-to-integer](https://github.com/hnjog/Algorithm/tree/master/0013-roman-to-integer) |
 | [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
+| [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
@@ -251,4 +252,12 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
+## Memoization
+|  |
+| ------- |
+| [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
 <!---LeetCode Topics End-->
