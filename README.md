@@ -246,6 +246,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0104-maximum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0110-balanced-binary-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0111-minimum-depth-of-binary-tree) |
+| [0112-path-sum](https://github.com/hnjog/Algorithm/tree/master/0112-path-sum) |
 | [0733-flood-fill](https://github.com/hnjog/Algorithm/tree/master/0733-flood-fill) |
 ## Breadth-First Search
 |  |
@@ -254,6 +255,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0101-symmetric-tree](https://github.com/hnjog/Algorithm/tree/master/0101-symmetric-tree) |
 | [0104-maximum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0111-minimum-depth-of-binary-tree) |
+| [0112-path-sum](https://github.com/hnjog/Algorithm/tree/master/0112-path-sum) |
 | [0733-flood-fill](https://github.com/hnjog/Algorithm/tree/master/0733-flood-fill) |
 ## Matrix
 |  |
@@ -280,6 +282,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0104-maximum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0110-balanced-binary-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0111-minimum-depth-of-binary-tree) |
+| [0112-path-sum](https://github.com/hnjog/Algorithm/tree/master/0112-path-sum) |
 ## Binary Tree
 |  |
 | ------- |
@@ -289,4 +292,5 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0104-maximum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0104-maximum-depth-of-binary-tree) |
 | [0110-balanced-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0110-balanced-binary-tree) |
 | [0111-minimum-depth-of-binary-tree](https://github.com/hnjog/Algorithm/tree/master/0111-minimum-depth-of-binary-tree) |
+| [0112-path-sum](https://github.com/hnjog/Algorithm/tree/master/0112-path-sum) |
 <!---LeetCode Topics End-->
