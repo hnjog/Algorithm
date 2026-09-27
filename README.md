@@ -18,6 +18,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0118-pascals-triangle](https://github.com/hnjog/Algorithm/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/hnjog/Algorithm/tree/master/0119-pascals-triangle-ii) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/hnjog/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
@@ -273,6 +274,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
 | [0118-pascals-triangle](https://github.com/hnjog/Algorithm/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/hnjog/Algorithm/tree/master/0119-pascals-triangle-ii) |
+| [0121-best-time-to-buy-and-sell-stock](https://github.com/hnjog/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
 ## Memoization
 |  |
 | ------- |
