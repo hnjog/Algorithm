@@ -21,6 +21,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/hnjog/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0136-single-number](https://github.com/hnjog/Algorithm/tree/master/0136-single-number) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
@@ -63,6 +64,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0041-first-missing-positive](https://github.com/hnjog/Algorithm/tree/master/0041-first-missing-positive) |
 | [0138-copy-list-with-random-pointer](https://github.com/hnjog/Algorithm/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -80,6 +82,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0056-merge-intervals](https://github.com/hnjog/Algorithm/tree/master/0056-merge-intervals) |
 | [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0147-insertion-sort-list](https://github.com/hnjog/Algorithm/tree/master/0147-insertion-sort-list) |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
@@ -88,6 +91,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Counting Sort
 |  |
 | ------- |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
 ## Stack
@@ -174,6 +178,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
 ## Queue
@@ -316,4 +321,8 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
+## Boyer–Moore Majority Vote Algorithm
+|  |
+| ------- |
+| [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 <!---LeetCode Topics End-->
