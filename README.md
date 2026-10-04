@@ -75,6 +75,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- |
 | [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0136-single-number](https://github.com/hnjog/Algorithm/tree/master/0136-single-number) |
+| [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
 |  |
@@ -179,6 +180,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/hnjog/Algorithm/tree/master/0004-median-of-two-sorted-arrays) |
 | [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
+| [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
 ## Queue
