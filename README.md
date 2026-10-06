@@ -66,6 +66,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
 | [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
+| [0205-isomorphic-strings](https://github.com/hnjog/Algorithm/tree/master/0205-isomorphic-strings) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -157,6 +158,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0058-length-of-last-word](https://github.com/hnjog/Algorithm/tree/master/0058-length-of-last-word) |
 | [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
+| [0205-isomorphic-strings](https://github.com/hnjog/Algorithm/tree/master/0205-isomorphic-strings) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
