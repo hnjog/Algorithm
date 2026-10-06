@@ -65,6 +65,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0138-copy-list-with-random-pointer](https://github.com/hnjog/Algorithm/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
 | [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
+| [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -120,6 +121,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
 | [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
 ## Monotonic Stack
@@ -244,6 +246,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0088-merge-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0088-merge-sorted-array) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
+| [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 ## Quickselect
@@ -323,6 +326,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 |  |
 | ------- |
 | [0141-linked-list-cycle](https://github.com/hnjog/Algorithm/tree/master/0141-linked-list-cycle) |
+| [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 ## Boyer–Moore Majority Vote Algorithm
 |  |
 | ------- |
