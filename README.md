@@ -82,6 +82,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0136-single-number](https://github.com/hnjog/Algorithm/tree/master/0136-single-number) |
 | [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
+| [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
 |  |
@@ -128,6 +129,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0070-climbing-stairs](https://github.com/hnjog/Algorithm/tree/master/0070-climbing-stairs) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
+| [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
 ## Monotonic Stack
@@ -153,6 +155,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0002-add-two-numbers](https://github.com/hnjog/Algorithm/tree/master/0002-add-two-numbers) |
 | [0021-merge-two-sorted-lists](https://github.com/hnjog/Algorithm/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/hnjog/Algorithm/tree/master/0206-reverse-linked-list) |
+| [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
 ## String
 |  |
 | ------- |
