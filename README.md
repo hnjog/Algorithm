@@ -71,6 +71,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0205-isomorphic-strings](https://github.com/hnjog/Algorithm/tree/master/0205-isomorphic-strings) |
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
 | [0219-contains-duplicate-ii](https://github.com/hnjog/Algorithm/tree/master/0219-contains-duplicate-ii) |
+| [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -93,6 +94,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0169-majority-element](https://github.com/hnjog/Algorithm/tree/master/0169-majority-element) |
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
+| [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -168,6 +170,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0067-add-binary](https://github.com/hnjog/Algorithm/tree/master/0067-add-binary) |
 | [0125-valid-palindrome](https://github.com/hnjog/Algorithm/tree/master/0125-valid-palindrome) |
 | [0205-isomorphic-strings](https://github.com/hnjog/Algorithm/tree/master/0205-isomorphic-strings) |
+| [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
