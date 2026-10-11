@@ -112,6 +112,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0144-binary-tree-preorder-traversal](https://github.com/hnjog/Algorithm/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/hnjog/Algorithm/tree/master/0145-binary-tree-postorder-traversal) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
+| [0225-implement-stack-using-queues](https://github.com/hnjog/Algorithm/tree/master/0225-implement-stack-using-queues) |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
 | [0636-exclusive-time-of-functions](https://github.com/hnjog/Algorithm/tree/master/0636-exclusive-time-of-functions) |
 | [0739-daily-temperatures](https://github.com/hnjog/Algorithm/tree/master/0739-daily-temperatures) |
@@ -198,6 +199,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Queue
 |  |
 | ------- |
+| [0225-implement-stack-using-queues](https://github.com/hnjog/Algorithm/tree/master/0225-implement-stack-using-queues) |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [1700-number-of-students-unable-to-eat-lunch](https://github.com/hnjog/Algorithm/tree/master/1700-number-of-students-unable-to-eat-lunch) |
@@ -205,6 +207,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 ## Design
 |  |
 | ------- |
+| [0225-implement-stack-using-queues](https://github.com/hnjog/Algorithm/tree/master/0225-implement-stack-using-queues) |
 | [0232-implement-queue-using-stacks](https://github.com/hnjog/Algorithm/tree/master/0232-implement-queue-using-stacks) |
 ## Heap (Priority Queue)
 |  |
