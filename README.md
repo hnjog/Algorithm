@@ -133,6 +133,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
+| [0326-power-of-three](https://github.com/hnjog/Algorithm/tree/master/0326-power-of-three) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
 ## Monotonic Stack
@@ -159,6 +160,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0021-merge-two-sorted-lists](https://github.com/hnjog/Algorithm/tree/master/0021-merge-two-sorted-lists) |
 | [0206-reverse-linked-list](https://github.com/hnjog/Algorithm/tree/master/0206-reverse-linked-list) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
+| [0326-power-of-three](https://github.com/hnjog/Algorithm/tree/master/0326-power-of-three) |
 ## String
 |  |
 | ------- |
