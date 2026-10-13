@@ -25,6 +25,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
 | [0219-contains-duplicate-ii](https://github.com/hnjog/Algorithm/tree/master/0219-contains-duplicate-ii) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0283-move-zeroes](https://github.com/hnjog/Algorithm/tree/master/0283-move-zeroes) |
 | [0373-find-k-pairs-with-smallest-sums](https://github.com/hnjog/Algorithm/tree/master/0373-find-k-pairs-with-smallest-sums) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
@@ -72,6 +73,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
 | [0219-contains-duplicate-ii](https://github.com/hnjog/Algorithm/tree/master/0219-contains-duplicate-ii) |
 | [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
@@ -84,6 +86,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0136-single-number](https://github.com/hnjog/Algorithm/tree/master/0136-single-number) |
 | [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
 |  |
@@ -95,6 +98,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0215-kth-largest-element-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0215-kth-largest-element-in-an-array) |
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -133,6 +137,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0150-evaluate-reverse-polish-notation](https://github.com/hnjog/Algorithm/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0202-happy-number](https://github.com/hnjog/Algorithm/tree/master/0202-happy-number) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0326-power-of-three](https://github.com/hnjog/Algorithm/tree/master/0326-power-of-three) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0932-beautiful-array](https://github.com/hnjog/Algorithm/tree/master/0932-beautiful-array) |
@@ -190,6 +195,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0033-search-in-rotated-sorted-array](https://github.com/hnjog/Algorithm/tree/master/0033-search-in-rotated-sorted-array) |
 | [0035-search-insert-position](https://github.com/hnjog/Algorithm/tree/master/0035-search-insert-position) |
 | [0069-sqrtx](https://github.com/hnjog/Algorithm/tree/master/0069-sqrtx) |
+| [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0633-sum-of-square-numbers](https://github.com/hnjog/Algorithm/tree/master/0633-sum-of-square-numbers) |
 | [0704-binary-search](https://github.com/hnjog/Algorithm/tree/master/0704-binary-search) |
 | [0852-peak-index-in-a-mountain-array](https://github.com/hnjog/Algorithm/tree/master/0852-peak-index-in-a-mountain-array) |
