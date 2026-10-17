@@ -76,6 +76,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
+| [0389-find-the-difference](https://github.com/hnjog/Algorithm/tree/master/0389-find-the-difference) |
 | [0448-find-all-numbers-disappeared-in-an-array](https://github.com/hnjog/Algorithm/tree/master/0448-find-all-numbers-disappeared-in-an-array) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -88,6 +89,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
 | [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
+| [0389-find-the-difference](https://github.com/hnjog/Algorithm/tree/master/0389-find-the-difference) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
 |  |
@@ -100,6 +102,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0217-contains-duplicate](https://github.com/hnjog/Algorithm/tree/master/0217-contains-duplicate) |
 | [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
+| [0389-find-the-difference](https://github.com/hnjog/Algorithm/tree/master/0389-find-the-difference) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 | [1200-minimum-absolute-difference](https://github.com/hnjog/Algorithm/tree/master/1200-minimum-absolute-difference) |
 | [1365-how-many-numbers-are-smaller-than-the-current-number](https://github.com/hnjog/Algorithm/tree/master/1365-how-many-numbers-are-smaller-than-the-current-number) |
@@ -182,6 +185,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0205-isomorphic-strings](https://github.com/hnjog/Algorithm/tree/master/0205-isomorphic-strings) |
 | [0242-valid-anagram](https://github.com/hnjog/Algorithm/tree/master/0242-valid-anagram) |
 | [0387-first-unique-character-in-a-string](https://github.com/hnjog/Algorithm/tree/master/0387-first-unique-character-in-a-string) |
+| [0389-find-the-difference](https://github.com/hnjog/Algorithm/tree/master/0389-find-the-difference) |
 | [0482-license-key-formatting](https://github.com/hnjog/Algorithm/tree/master/0482-license-key-formatting) |
 | [0520-detect-capital](https://github.com/hnjog/Algorithm/tree/master/0520-detect-capital) |
 | [0686-repeated-string-match](https://github.com/hnjog/Algorithm/tree/master/0686-repeated-string-match) |
