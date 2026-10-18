@@ -89,6 +89,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0191-number-of-1-bits](https://github.com/hnjog/Algorithm/tree/master/0191-number-of-1-bits) |
 | [0231-power-of-two](https://github.com/hnjog/Algorithm/tree/master/0231-power-of-two) |
 | [0268-missing-number](https://github.com/hnjog/Algorithm/tree/master/0268-missing-number) |
+| [0338-counting-bits](https://github.com/hnjog/Algorithm/tree/master/0338-counting-bits) |
 | [0389-find-the-difference](https://github.com/hnjog/Algorithm/tree/master/0389-find-the-difference) |
 | [0645-set-mismatch](https://github.com/hnjog/Algorithm/tree/master/0645-set-mismatch) |
 ## Sorting
@@ -328,6 +329,7 @@ This is a auto push repository for Baekjoon Online Judge created with [BaekjoonH
 | [0118-pascals-triangle](https://github.com/hnjog/Algorithm/tree/master/0118-pascals-triangle) |
 | [0119-pascals-triangle-ii](https://github.com/hnjog/Algorithm/tree/master/0119-pascals-triangle-ii) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/hnjog/Algorithm/tree/master/0121-best-time-to-buy-and-sell-stock) |
+| [0338-counting-bits](https://github.com/hnjog/Algorithm/tree/master/0338-counting-bits) |
 | [0509-fibonacci-number](https://github.com/hnjog/Algorithm/tree/master/0509-fibonacci-number) |
 ## Memoization
 |  |
